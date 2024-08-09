@@ -1,12 +1,12 @@
 <!-- исправить щиты и добавить разные картинки -->
 <template>
-  <div class="bg-[#E7E7E7] rounded-lg p-5 flex-1 h-[1467px] flex flex-col" style="justify-content: space-between;">
+  <div class="bg-[#E7E7E7] rounded-lg p-5 flex-1 flex flex-col" style="justify-content: space-between;">
     <div>
       <div class="p-0 text-4xl">
           <div class="font-black uppercase text-purple-vivid my-0">{{type}}ая</div>
           <div class="font-normal text-black my-0">защита</div>
       </div>
-      <img src="/public/img/bmv-cover1.png" alt="bmv-cover1">
+      <img :src="imgSrc" alt="bmv-cover1">
       <div :class="[`gradient-${gradientClass}`, 'my-5', 'p-5', 'rounded-lg', 'text-white']">
         <div class="font-bold text-3xl">Защищает автомобиль на</div>
         <div class="flex space-x-6">
@@ -42,7 +42,7 @@
       </div>
       <div class="my-5 p-2 text-black text-lg">{{description}}</div>
     </div>
-    <div class=" my-5 p-5 rounded-lg text-white" style="background-image: linear-gradient(44deg, #2A146B 25%, #9592E5 55%, #5E69E0 80%)">
+    <div class=" my-5 p-5 rounded-lg text-white mt-auto" style="background-image: linear-gradient(44deg, #2A146B 25%, #9592E5 55%, #5E69E0 80%)">
       <div class="font-bold text-3xl mb-1">Узнать стоимость</div>
       <div class="font-bold text-3xl mb-6"><span class="font-black uppercase">{{type}}ой </span>защиты</div>
       <ContactButtons></ContactButtons>
@@ -52,10 +52,10 @@
 <script>
 import ContactButtons from './contact-buttons.vue';
   export default {
-    props: ['type', 'percent', 'goodFor', 'defend', 'noDefend', 'description', 'gradientClass'],
+    props: ['type', 'percent', 'goodFor', 'defend', 'noDefend', 'description', 'gradientClass', 'imgSrc'],
     components: {
       ContactButtons
-    }
+    },
   };
 </script>
 <style>
