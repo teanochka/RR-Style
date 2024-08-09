@@ -1,8 +1,8 @@
 <template>
   <section class="relative">
     <img class="absolute left-0 top-0 z-10" src="/public/img/curve.png" alt="" />
-    <div class="absolute right-0 top-0 z-0">
-      <img src="/public/img/car-background.png" class="object-cover" />
+    <div class="absolute right-0 top-0 z-0 w-full">
+      <img src="/public/img/car-background.png" class="object-fill w-full" />
     </div>
     <nav class="relative z-40 mb-20 flex items-center px-28 py-6" style="justify-content: space-between;">
       <div class="flex gap-32">
@@ -10,44 +10,50 @@
           <img src="/public/svg/logo.svg" alt="" />
           <div class="flex flex-col items-start text-white">
             <div class="text-3xl font-black"><span class="text-purple-light">PP</span>-сервис</div>
-            <h1 class="text-m text-base">Оклейка автомобилей</h1>
+            <div class="text-m text-base">Оклейка автомобилей</div>
           </div>
         </div>
         <button class="border-purple-light m-1 flex items-center gap-2 rounded-full border bg-transparent px-5 py-2">
-          <img src="/public/svg/menu.svg" alt="" />
+          <img src="/svg/menu.svg" alt="" />
           <div class="text-lg text-white">Меню</div>
         </button>
       </div>
       <div class="flex gap-32">
         <div class="flex gap-8">
-          <img src="/public/svg/whatsapp-small.svg" alt="" />
-          <img src="/public/svg/telegram-small.svg" alt="" />
+          <a href="#">
+            <img src="/svg/whatsapp-small.svg" alt=""/>
+          </a>
+          <a href="#">
+            <img src="/svg/telegram-small.svg" alt=""/>
+          </a>
         </div>
         <div class="flex gap-4">
-          <img src="/public/svg/phone.svg" alt="" />
-          <div class="text-3xl font-black text-white">+7-495-499-88-22</div>
+          <img src="/svg/phone.svg" alt="" />
+          <a href="tel:+7-495-499-88-22" class="text-3xl font-black">+7-495-499-88-22</a>
         </div>
       </div>
     </nav>
-    <header class="relative z-10 flex w-1/2 flex-col gap-6 pl-40 text-white">
-      <div class="flex flex-col text-6xl font-black uppercase">Оклейка защитной плёнкой</div>
-      <div class="text-2xl">Оклейка защитной и матовой плёнкой кузова и салона авто и тонировка в РР-свервисе.</div>
-      <div class="flex gap-2">
-        <InfoCard title="Мы - одни из первых" info="Наши специалисты работают с оклейкой авто с момента появления защитных пленок в России" />
-        <InfoCard title="0% брака" info="В работе мы используем только проверенные и качественные плёнки от легальных производителей." />
-        <InfoCard title="Занимаемся только пленками" info="Мы не распыляемся на большое количество разных услуг по детейлингу и рестайлингу." />
-      </div>
-      <div class="outline-purple-light my-2 flex items-center gap-2 rounded-full p-4 pl-7 outline-dashed outline-2" style="width: fit-content;">
-        <div class="text-lg font-black">Хотите узнать стоимость? Пришлие фото на</div>
-        <ContactButtons></ContactButtons>
+    <header class="relative z-10 flex flex-col gap-6 px-[20px] 2xl:px-[8vw] xl:px-[80px] md:px-[30px] text-white">
+      <div class="md:w-[62vw] 1.5xl:w-[42vw]">
+        <h1 class="flex flex-col font-black uppercase">Оклейка защитной плёнкой</h1>
+        <div class="text-2xl">Оклейка защитной и матовой плёнкой кузова и салона авто и тонировка в РР-свервисе.</div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 justify-between gap-[1.5vw]">
+          <InfoCard title="Мы - одни из первых" info="Наши специалисты работают с оклейкой авто с момента появления защитных пленок в России" />
+          <InfoCard title="0% брака" info="В работе мы используем только проверенные и качественные плёнки от легальных производителей." />
+          <InfoCard title="Занимаемся только пленками" info="Мы не распыляемся на большое количество разных услуг по детейлингу и рестайлингу." />
+        </div>
+        <div class="outline-purple-light my-2 flex items-center gap-2 rounded-full p-4 pl-7 outline-dashed outline-2" style="width: fit-content;">
+          <div class="text-lg font-black">Хотите узнать стоимость? Пришлие фото на</div>
+          <ContactButtons></ContactButtons>
+        </div>
       </div>
     </header>
   </section>
-  <section class="relative mx-40 mt-32">
+  <section class="relative px-[20px] 2xl:px-[8vw] xl:px-[40px] md:px-[30px] mt-32">
     <img class="absolute top-0 z-10" src="/public/img/bubbles.png" alt="" />
     <div class="relative z-20">
-      <h2 class="mb-14 text-7xl font-black uppercase text-white">Что вам нужно?</h2>
-      <div class="flex" style="gap: 0.1vw;">
+      <h2 class="mb-14 text-white">Что вам нужно?</h2>
+      <div class="flex gap-[0.1vw]">
         <button class="rounded-t-lg px-12 py-7 text-3xl font-bold text-black "
         :class="{
             'bg-white': selectedOption === 'option1',
@@ -55,7 +61,7 @@
           }"
           @click="selectedOption = 'option1'"
         >
-          Оклейка прозрачной пленкой
+          <h3>Оклейка прозрачной пленкой</h3>
         </button>
         <button class="rounded-t-lg px-12 py-7 text-3xl font-bold text-black"
         :class="{
@@ -64,7 +70,7 @@
           }"
           @click="selectedOption = 'option2'"
         >
-          Оклейка матовой пленкой
+          <h3>Оклейка матовой пленкой</h3>
         </button>
         <button class="rounded-t-lg px-12 py-7 text-3xl font-bold text-black"
         :class="{
@@ -73,7 +79,7 @@
           }"
           @click="selectedOption = 'option3'"
         >
-          Тонировка стёкол
+          <h3>Тонировка стёкол</h3>
         </button>
       </div>
       <div class="rounded-b-lg rounded-tr-lg bg-white p-12 text-black">
@@ -90,38 +96,38 @@
               </ul>
             </div>
           </div>
-          <h2 class="texr-black mb-16 text-6xl font-black">Выберите интересующий Вас комплекс</h2>
-          <div class="grid grid-cols-3">
-            <ServiceCard type="Обязательн" percent="60" goodFor="живете в городе / ездите по городу." defend="передний бампер, капот, передние крылья, зеркала, стойки лобового стекла, передняя кромка крыши." noDefend="передние и задние двери, крышку багажника, крышу и т.п." description="Данный комплекс защищает основные зоны риска кузова автомобиля, на которые обычно приходится около 60-70% всех проблем. Такая защита предотвратит нежелательные последствия от гравия из-под колёс, пескоструя, выпавших из впереди идущей машины небольших предметов, а также от последствий серьезных осадков. Но при этом, внушительная часть кузова автомобиля останется без защиты." gradientClass="1" imgSrc="/public/img/bmv-cover1.png"/>
-            <ServiceCard type="Оптимальн" percent="80" goodFor="живете за городом / ездите по городу." defend="передний бампер, капот, передние крылья, зеркала, стойки лобового стекла, передняя кромка крыши, внутренние пороги, зоны под ручками, зона выгрузки, кромки дверей, стойки." noDefend="передние и задние двери, крышку багажника, крышу и т.п." description="Данный комплекс включает в себя оклейку всех обязательных элементов, а также тех, которые не сразу видны, но обычно подвергаются постоянной нагрузке и риску. Например, это зоны под ручками, страдающие от ногтей и пороги, покрытие которых разрушает обувь с каблуками." gradientClass="2" imgSrc="/public/img/bmv-cover2.png"/>
-            <ServiceCard type="Полн" percent="100" goodFor="живете за городом / много путешествуете на автомобиле." defend="Включает защиту всего кузова автомобиля." noDefend="" description="Помимо защиты от гравия, пескоструя и осадков, оклейка плёнкой всех элементов и узлов кузова автомобиля может предотвратить повреждение покрытия, появление царапин и сколов, как из-за небольших инцидентов (например, при парковке во дворе или столкновения с тележкой у супермаркета), так и при мелких дтп - ведь они чаще всего и вредят не основным частям кузова." gradientClass="3" imgSrc="/public/img/bmv-cover3.png"/>
+          <h3 class="texr-black mb-16 text-6xl font-black">Выберите интересующий Вас комплекс</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3">
+            <ServiceCard type="Обязательн" percent="60" goodFor="живете в городе / ездите по городу." defend="передний бампер, капот, передние крылья, зеркала, стойки лобового стекла, передняя кромка крыши." noDefend="передние и задние двери, крышку багажника, крышу и т.п." description="Данный комплекс защищает основные зоны риска кузова автомобиля, на которые обычно приходится около 60-70% всех проблем. Такая защита предотвратит нежелательные последствия от гравия из-под колёс, пескоструя, выпавших из впереди идущей машины небольших предметов, а также от последствий серьезных осадков. Но при этом, внушительная часть кузова автомобиля останется без защиты." gradientClass="1" imgSrc="/img/bmv-cover1.png"/>
+            <ServiceCard type="Оптимальн" percent="80" goodFor="живете за городом / ездите по городу." defend="передний бампер, капот, передние крылья, зеркала, стойки лобового стекла, передняя кромка крыши, внутренние пороги, зоны под ручками, зона выгрузки, кромки дверей, стойки." noDefend="передние и задние двери, крышку багажника, крышу и т.п." description="Данный комплекс включает в себя оклейку всех обязательных элементов, а также тех, которые не сразу видны, но обычно подвергаются постоянной нагрузке и риску. Например, это зоны под ручками, страдающие от ногтей и пороги, покрытие которых разрушает обувь с каблуками." gradientClass="2" imgSrc="/img/bmv-cover2.png"/>
+            <ServiceCard type="Полн" percent="100" goodFor="живете за городом / много путешествуете на автомобиле." defend="Включает защиту всего кузова автомобиля." noDefend="" description="Помимо защиты от гравия, пескоструя и осадков, оклейка плёнкой всех элементов и узлов кузова автомобиля может предотвратить повреждение покрытия, появление царапин и сколов, как из-за небольших инцидентов (например, при парковке во дворе или столкновения с тележкой у супермаркета), так и при мелких дтп - ведь они чаще всего и вредят не основным частям кузова." gradientClass="3" imgSrc="/img/bmv-cover3.png"/>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="mx-40 my-32 text-white">
-    <h2 class="mb-12 text-7xl font-black uppercase">Почему мы?</h2>
-    <div class="grid grid-cols-1 sm:grod-cols-2 md:grid-cols-3">
+  <section class="px-[20px] 2xl:px-[8vw] xl:px-[40px] md:px-[30px] my-32 text-white">
+    <h2 class="mb-12">Почему мы?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3">
       <div>
         <img src="/public/img/why-us-1.png" alt="" />
-        <div class="my-3 text-3xl font-bold">Оклеиваем даже Mercedes G-класса.</div>
+        <h3 class="my-3">Оклеиваем даже Mercedes G-класса.</h3>
         <div class="text-xl font-normal">У нас есть успешный опыт работы с автомобилями, наиболее сложными для оклейки, такими как Mercedes G-класса ("Гелендваген") и Jeep Wrangler. Кузов этих автомобилей имеет огромное количество мелких элементов, особенностей рельефа. Некоторые авто невозможно оклеить, не разобрав их полностью, что делает их оклейку невероятно сложной и кропотливой работой, с которой мы идеально справляемся!</div>
       </div>
       <div>
         <img src="/public/img/why-us-2.png" alt="" />
-        <div class="my-3 text-3xl font-bold">Знаем все тонкости</div>
+        <h3 class="my-3">Знаем все тонкости</h3>
         <div class="text-xl font-normal">Мы оклеиваем любые автомобили - от китайских новинок до премиальных иномарок. Наш опыт и знания позволяют подбирать наилучший вид плёнки для любого случая. В том числе, мы работаем с самой дорогой плёнкой, нанесение которой является сложным процессом, с которым не справится новичок, а только профессионал с большим опытом.</div>
       </div>
       <div>
         <img src="/public/img/why-us-3.png" alt="" />
-        <div class="my-3 text-3xl font-bold">Не используем шаблоны.</div>
+        <h3 class="my-3">Не используем шаблоны.</h3>
         <div class="text-xl font-normal">При оклейке кузова мы не используем лекала, а режем плёнку сами. Благодаря этому плёнка на всех сложных местах (выступы, углубления, края) ложится с запасом, что полностью предотвращает попадание под неё влаги, пыли и других несущих вред для покрытия частиц.</div>
       </div>
     </div>
   </section>
-  <section class="mx-40 my-32 text-white">
-    <h2 class="my-6 w-2/3 text-7xl font-black uppercase">где именно заказать оклейку?</h2>
+  <section class="px-[20px] 2xl:px-[8vw] xl:px-[40px] md:px-[30px] my-32 text-white">
+    <h2 class="my-6 w-2/3">где именно заказать оклейку?</h2>
     <div class="my-10 text-3xl font-normal">Наглядно покажем чем мы отличаемся от других мест</div>
     <div class="bg-purple-dark mb-14 flex w-max rounded-full p-3 text-2xl">
       <button class="group relative" @click="shipmentOption = 'option1'">
@@ -196,84 +202,87 @@
       <ContactButtons></ContactButtons>
     </div>
   </section>
-  <section class="flex gap-24 bg-[#D9D9D9] py-24 pl-40 text-black">
-    <div>
-      <h2 class="my-6 text-7xl font-black uppercase">С какой плёнкой мы работаем?</h2>
-      <div class="bg-purple-dark my-10 flex w-max rounded-full p-3 text-2xl">
-        <button class="group relative" @click="company = 'llumar'">
-        <div class="rounded-full bg-transparent p-5 px-12 text-[#A6A5C3]"
-          :class="{
-            'bg-white text-black': company == 'llumar',
-            'hover:underline': company !== 'llumar',
-          }"
-        >
-          Llumar
-        </div>
-        <div class="absolute bottom-0 left-1/3 h-0 w-0 translate-y-5 border-x-[11px] border-t-[22px] border-solid border-transparent"
-          :class="{
-            'border-t-white': company == 'llumar',
-          }"
-        >
-        </div>
-      </button>
-      <button class="group relative" @click="company = 'suntek'">
-        <div class="rounded-full bg-transparent p-5 px-12 text-[#A6A5C3]"
-          :class="{
-            'bg-white text-black': company == 'suntek',
-            'hover:underline': company !== 'suntek',
-          }"
-        >
-          SunTek
-        </div>
-        <div class="absolute bottom-0 left-1/3 h-0 w-0 translate-y-5 border-x-[11px] border-t-[22px] border-solid border-transparent"
-          :class="{
-            'border-t-white': company == 'suntek',
-          }"
-        >
-        </div>
-        </button>
-      </div>
-      <div v-if="company == 'llumar'">
-        <div class="my-20 flex items-center gap-16">
-          <img src="/public/img/lumar.png" alt="" />
-          <div>
-            <div class="mb-6 text-3xl font-bold">Llumar</div>
-            <div class="text-2xl">это плёнка от знаменитого американского производителя Eastman Chemical Company. Данная плёнка уже много лет заслуженно считается одной из лучших для тонировки стёкол автомобиля и популярна во всём мире благодаря проверенному качеству и беспроблемной эксплуатации.</div>
+  <section class="bg-[#D9D9D9] py-24 overflow-hidden text-black xl:flex 2xl:gap-[3vw] xl:justify-between">
+    <div class="2xl:w-[60vw] flex-none  xl:w-3/5 px-[20px] 2xl:pl-[8vw] xl:pl-[40px] md:px-[30px]">
+      <div class="relative flex justify-between">
+        <div>
+          <h2 class="my-6">С какой плёнкой мы работаем?</h2>
+        <div class="bg-purple-dark my-10 flex w-max rounded-full p-3 text-2xl">
+          <button class="group relative" @click="company = 'llumar'">
+          <div class="rounded-full bg-transparent p-5 px-12 text-[#A6A5C3]"
+            :class="{
+              'bg-white text-black': company == 'llumar',
+              'hover:underline': company !== 'llumar',
+            }"
+          >
+            Llumar
           </div>
+          <div class="absolute bottom-0 left-1/3 h-0 w-0 translate-y-5 border-x-[11px] border-t-[22px] border-solid border-transparent"
+            :class="{
+              'border-t-white': company == 'llumar',
+            }"
+          >
+          </div>
+        </button>
+        <button class="group relative" @click="company = 'suntek'">
+          <div class="rounded-full bg-transparent p-5 px-12 text-[#A6A5C3]"
+            :class="{
+              'bg-white text-black': company == 'suntek',
+              'hover:underline': company !== 'suntek',
+            }"
+          >
+            SunTek
+          </div>
+          <div class="absolute bottom-0 left-1/3 h-0 w-0 translate-y-5 border-x-[11px] border-t-[22px] border-solid border-transparent"
+            :class="{
+              'border-t-white': company == 'suntek',
+            }"
+          >
+          </div>
+          </button>
+        </div>
+        </div>
+        <img class="xl:hidden hidden sm:flex sm:w-[325px] lg:w-[373px] object-contain relative top-0 right-0 z-0 w-[227px] translate-x-[30px] -translate-y-12" src="/public/img/wrap.png" alt="" />
+      </div>  
+      <div v-if="company == 'llumar'">
+        <div class="my-20 grid grid-cols-3 grid-rows-3 items-center gap-x-7">
+          <img class="col-span-1 row-start-1 sm:row-span-3 w-full" src="/public/img/lumar.png" alt="" />
+          <div class="col-span-2 col-start-2 row-start-1 text-3xl font-bold">Llumar</div>
+          <div class="col-span-3 row-span-2 col-start-1 sm:col-start-2 row-start-2 text-2xl">это плёнка от знаменитого американского производителя Eastman Chemical Company. Данная плёнка уже много лет заслуженно считается одной из лучших для тонировки стёкол автомобиля и популярна во всём мире благодаря проверенному качеству и беспроблемной эксплуатации.</div>
         </div>
         <div class="my-8 text-2xl font-bold">Ключевые преимущества плёнки Llumar:</div>
-        <div class="flex gap-6 text-xl">
-          <div class="flex-1 rounded-lg bg-white p-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 2xl:gap-[1vw] gap-3 text-xl">
+          <div class="rounded-lg bg-white p-4">
             <img src="/public/svg/big-cross.svg" class="h-[70px]" alt="" />
             <div>высокий коэффициент защиты от вредных ультрафиолетовых лучей</div>
           </div>
-          <div class="flex-1 rounded-lg bg-white p-5">
+          <div class="rounded-lg bg-white p-4">
             <img src="/public/svg/big-cross.svg" class="h-[70px]" alt="" />
             <div>повышенная видимость даже в темное время суток (в том числе даже вечером вы сможете легко парковаться без использования фонарей и камеры!)</div>
           </div>
-          <div class="flex-1 rounded-lg bg-white p-5">
+          <div class="rounded-lg bg-white p-4">
             <img src="/public/svg/big-cross.svg" class="h-[70px]" alt="" />
             <div>максимальная толщина среди всех полиуретановых плёнок (214 микрон) сможет защитить стекло даже в случае лёгкого дтп</div>
           </div>
-          <div class="flex-1 rounded-lg bg-white p-5">
+          <div class="rounded-lg bg-white p-4">
             <img src="/public/svg/big-cross.svg" class="h-[70px]" alt="" />
             <div>относительная сложность при нанесении, благодаря которой с данной пленкой работают только профессионалы, а дилетанты избегают её.</div>
           </div>
         </div>
       </div>
     </div>
-    <img src="/public/img/wrap.png" alt="" />
+    <img class="hidden object-contain 2xl:flex-auto flex-initial self-start xl:flex" src="/public/img/wrap.png" alt="" />
   </section>
   <section class="relative overflow-hidden">
     <img class="absolute left-0 top-0 z-0" src="/public/img/projects-background.png" alt="" />
     <div class="relative z-10 px-40 pb-40 pt-32">
-      <div class="mb-14 text-7xl font-black uppercase text-white">Знаковые проекты</div>
-      <div class="flex gap-7">
+      <h2 class="mb-14 text-white">Знаковые проекты</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3">
         <div class="relative flex-1 text-white">
           <img class="absolute left-0 top-0 z-0" src="/public/svg/logo-dark.svg" alt="" />
           <div class="relative z-10 pl-11 pt-10">
             <img src="/public/img/mercedes.png" alt="mercedes" />
-            <div class="mt-10 text-3xl font-bold">Mercedes G-classe 2023</div>
+            <h3 class="mt-10">Mercedes G-classe 2023</h3>
             <div class="my-5 text-2xl font-normal">Оклейка полиуретановой пленкой, комплектация “<span class="text-purple-light underline">Базовая защита</span>”</div>
             <div class="text-lg font-normal text-[#999999]">22 апреля 2024</div>
           </div>
@@ -282,7 +291,7 @@
           <img class="absolute left-0 top-0 z-0" src="/public/svg/logo-dark.svg" alt="" />
           <div class="relative z-10 pl-11 pt-10">
             <img src="/public/img/bmw.png" alt="mercedes" />
-            <div class="mt-10 text-3xl font-bold">BMW X5 G05 2022</div>
+            <h3 class="mt-10">BMW X5 G05 2022</h3>
             <div class="my-5 text-2xl font-normal">Оклейка полиуретановой пленкой, комплектация “<span class="text-purple-light underline">Базовая защита</span>”</div>
             <div class="text-lg font-normal text-[#999999]">22 апреля 2024</div>
           </div>
@@ -291,7 +300,7 @@
           <img class="absolute left-0 top-0 z-0" src="/public/svg/logo-dark.svg" alt="" />
           <div class="relative z-10 pl-11 pt-10">
             <img src="/public/img/audi.png" alt="mercedes" />
-            <div class="mt-10 text-3xl font-bold">Audi SQ-8 2023</div>
+            <h3 class="mt-10">Audi SQ-8 2023</h3>
             <div class="my-5 text-2xl font-normal">Оклейка полиуретановой пленкой, комплектация “<span class="text-purple-light underline">Базовая защита</span>”</div>
             <div class="text-lg font-normal text-[#999999]">22 апреля 2024</div>
           </div>
@@ -309,23 +318,23 @@
   <section class="relative my-28 ml-40 text-white">
     <img class="absolute right-0 top-0 z-0 -translate-y-28" src="/public/img/salon.png" alt="salon" />
     <div class="relative z-10 w-[1223px]">
-      <div class="mb-12 text-7xl font-black uppercase">Также мы занимаемся оклейкой салона</div>
+      <h2 class="mb-12">Также мы занимаемся оклейкой салона</h2>
       <div class="my-10 text-3xl font-normal">Оклейка салона делается только дорогой плёнкой, т.к. работа тонкая, есть много мелких деталей и важна качественная тактильность.</div>
       <div class="my-4 text-4xl font-normal text-[#949CFF]">Почему нужно обратиться именно к нам?</div>
-      <div class="mb-14 flex gap-24">
+      <div class="mb-14 grid grid-cols-1 sm:grid-cols-3 gap-24">
         <div class="flex-1">
           <img src="/public/svg/big-cross.svg" alt="" class="my-3 -translate-x-2" style="filter: drop-shadow( 0px 4px 4px rgba(140, 149, 2554, 0.4));" />
-          <div class="my-3 text-3xl font-bold">Работаем по шаблонам</div>
+          <h3 class="my-3">Работаем по шаблонам</h3>
           <div class="text-xl font-normal">В работе используем проверенные шаблоны от опытных разработчиков, поэтому вся плёнка точно подходит стык в стык и не бракуется в процессе нанесения. Шаблоны есть абсолютно для всех моделей!</div>
         </div>
         <div class="flex-1">
           <img src="/public/svg/big-cross.svg" alt="" class="my-3 -translate-x-2" style="filter: drop-shadow( 0px 4px 4px rgba(140, 149, 2554, 0.4));" />
-          <div class="my-3 text-3xl font-bold">Используем только легальную плёнку от лучших брендов.</div>
+          <h3 class="my-3">Используем только легальную плёнку от лучших брендов.</h3>
           <div class="text-xl font-normal">Мы не оклеиваем салон дешёвой плёнкой. Поэтому мы гарантируем, что после нашей работы, любая деталь интерьера вашего автомобиля будет смотреться невероятно красиво!</div>
         </div>
         <div class="flex-1">
           <img src="/public/svg/big-cross.svg" alt="" class="my-3 -translate-x-2" style="filter: drop-shadow( 0px 4px 4px rgba(140, 149, 2554, 0.4));" />
-          <div class="my-3 text-3xl font-bold">Наша плёнка не только радует глаз, но и защищает покрытие.</div>
+          <h3 class="my-3">Наша плёнка не только радует глаз, но и защищает покрытие.</h3>
           <div class="text-xl font-normal">Да, помимо эстетической функции всё наша плёнка несёт и защитные функции. Благодаря этому вы забудете о царапинах, мелких повреждениях и при необходимости сможете продать автомобиль почти как новый!</div>
         </div>
       </div>
@@ -339,7 +348,7 @@
     <img class="t-0 l-0 absolute z-0" src="/public/svg/faq.svg" alt="" />
     <div class="relative z-10 px-40 py-24">
       <div class="flex items-start gap-32">
-        <div class="mb-12 w-1/5 text-7xl font-black uppercase">вопрос-ответ</div>
+        <h2 class="mb-12 w-1/5">вопрос-ответ</h2>
         <div class="text-white [&>div]:mb-4 [&>div]:rounded-lg [&>div]:border-2 [&>div]:border-white/[0.15] [&>div]:bg-[rgba(255,255,255,0.10)] [&>div]:px-10 [&>div]:py-7">
           <div class="group">
             <div class="flex items-center gap-4">
@@ -386,7 +395,7 @@
     </div>
   </section>
   <section class="flex gap-20 bg-white px-40 py-24 text-black">
-    <div class="text-7xl font-black uppercase">Отзывы</div>
+    <h2>Отзывы</h2>
     <div class="mx-5" style="width:560px;height:800px;overflow:hidden;">
       <iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;" src="https://yandex.ru/maps-reviews-widget/226327670406?comments"></iframe>
       <a href="https://yandex.ru/maps/org/usadba_izmaylovo/226327670406/" target="_blank" style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 20px;width:100%;text-align:center;">Усадьба Измайлово на карте Москвы — Яндекс.Карты</a>
@@ -394,12 +403,12 @@
   </section>
   <footer class="relative text-white overflow-hidden">
     <img class="absolute z-0 top-0 right-0 translate-x-1 -translate-y-44" src="/public/img/contacts.png" alt="">
-    <div class="mb-40 px-40 pt-36 relative z-10 flex gap-40">
+    <div class="mb-40 px-40 pt-36 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-40">
       <div>
-        <div class="mb-20 text-7xl font-black uppercase">контакты</div>
+        <h2 class="mb-20">контакты</h2>
         <div class="flex gap-4 items-center my-7">
           <img class="h-[40px]" src="/public/svg/phone.svg" alt="" />
-          <div class="text-4xl font-normal">+7-495-499-88-22</div>
+          <a href="tel:+7-495-499-88-22" class="text-4xl font-normal">+7-495-499-88-22</a>
         </div>
         <div class="mb-6 text-xl font-normal">г. Москва, проспект Вернадского, 12Д</div>
         <div class="mb-6 text-purple-light underline">mail@ppservice.ru</div>

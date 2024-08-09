@@ -5,14 +5,76 @@
 
 @layer base {
     body {
-        @apply font-jost;
-        @apply bg-[#0A0A17]; 
+        @apply font-jost bg-[#0A0A17]; 
     }
-}
+    h2 {
+      @apply font-black uppercase;
+    }
+    h3 {
+      @apply font-bold;
+    }
+    @media screen(xs) {
+      h1 {
+        @apply text-[30px];
+      }
+      h2 {
+        @apply text-[30px];
+      }
+      h3 {
+        @apply text-[17px];
+      }
+    }
+    @media screen(sm) {
+      h1 {
+        @apply text-[30px];
+      }
+      h2 {
+        @apply text-[35px];
+      }
+      h3 {
+        @apply text-[20px];
+      }
+    }
+    @media screen(lg) {
+      h1 {
+        @apply text-[35px];
+      }
+      h2 {
+        @apply text-[40px];
+      }
+      h3 {
+        @apply text-[25px];
+      }
+    }
+    @media screen(xl) {
+      h1 {
+        @apply text-[50px];
+      }
+      h2 {
+        @apply text-[60px];
+      }
+      h3 {
+        @apply text-[25px];
+      }
+    }
+    @media screen(2xl) {
+      h1 {
+        @apply text-[60px];
+      }
+      h2 {
+        @apply text-[70px];
+      }
+      h3 {
+        @apply text-[30px];
+      }
+    }
+  }
 @layer components {
+
+
+
     li.shield::marker {
         content: url(/public/svg/violet-shield-wo-shadow.svg);
         filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
-        -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
     }
 }
