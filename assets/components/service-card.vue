@@ -1,6 +1,6 @@
 <!-- исправить щиты и добавить разные картинки -->
 <template>
-  <div class="bg-[#E7E7E7] rounded-lg p-5 flex-1 flex flex-col" style="justify-content: space-between;">
+  <div class="bg-[#E7E7E7] rounded-lg p-5 flex-1 flex flex-col justify-between text-base lg:text-lg ">
     <div>
       <div class="p-0 text-4xl">
           <div class="font-black uppercase text-purple-vivid my-0">{{type}}ая</div>
@@ -23,24 +23,24 @@
       <div class="my-5 p-5 flex flex-col gap-6 text-black bg-white rounded-lg">
         <div class="flex space-between">
           <div class="flex-1 font-bold text-xl">Кому подойдет:</div>
-          <div class="flex-1 font-normal text-lg">{{goodFor}}</div>
+          <div class="flex-1 font-normal">{{goodFor}}</div>
         </div>
         <div class="flex space-between items-start">
           <div class="flex-1 font-bold text-xl flex items-center">
             <img src="/public/svg/violet-shield.svg" alt="">
             <div>Защищает:</div>
           </div>
-          <div class="flex-1 font-normal text-lg">{{defend}}</div>
+          <div class="flex-1 font-normal">{{defend}}</div>
         </div>
         <div class="flex space-between items-start">
           <div class="flex-1 font-bold text-xl flex items-center">
             <img src="/public/svg/pink-shield.svg" alt="">
             <div>Не защищает:</div>
           </div>
-          <div class="flex-1 font-normal text-lg">{{noDefend}}</div>
+          <div class="flex-1 font-normal">{{noDefend}}</div>
         </div>
       </div>
-      <div class="my-5 p-2 text-black text-lg">{{description}}</div>
+      <div class="my-5 p-2 text-black">{{description}}</div>
     </div>
     <div class=" my-5 p-5 rounded-lg text-white mt-auto" style="background-image: linear-gradient(44deg, #2A146B 25%, #9592E5 55%, #5E69E0 80%)">
       <div class="font-bold text-3xl mb-1">Узнать стоимость</div>

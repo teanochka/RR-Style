@@ -11,7 +11,7 @@
       @apply font-black uppercase;
     }
     h3 {
-      @apply font-bold;
+      @apply font-bold leading-normal;
     }
     @media screen(xs) {
       h1 {
