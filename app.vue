@@ -401,11 +401,10 @@
         <div class="text-purple-light mb-6 underline">mail@ppservice.ru</div>
         <ContactButtons></ContactButtons>
       </div>
-      <div class="grid-column-start-2 h-[100px] before:bg-[url('/img/contacts.png')] before:h-[100px]">
-        hiii
-        <!-- <div class="relative aspect-[9/6] w-full">
+      <div class="h-full grid-column-start-2 before:bg-[url('/img/contacts.png')] before:block before:h-full before:w-full before:absolute before:bg-cover before:-top-[10%] before:left-[25%] before:bg-[left_-10vw_top_20%]">
+        <div class="relative aspect-[9/6] w-full">
           <iframe class="rounded-2xl" src="https://yandex.ru/map-widget/v1/?um=constructor%3A512003a69a1d413deddf6b000a4ec5de6c60bd02a06434742c307dbf80e2d3a0&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
-        </div> -->
+        </div>
       </div>
     </div>
     <div class="flex flex-wrap justify-between gap-6 px-[20px] py-6 sm:py-8 md:px-[30px] xl:px-[4vw]">
