@@ -7,11 +7,14 @@
     body {
         @apply font-jost bg-[#0A0A17]; 
     }
+    h1,h2,h3 {
+      @apply text-[20px];
+    }
     h2 {
       @apply font-black uppercase;
     }
     h3 {
-      @apply font-bold leading-normal;
+      @apply font-bold;
     }
     @media screen(xs) {
       h1 {
