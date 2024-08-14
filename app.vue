@@ -1,4 +1,113 @@
 <template>
+  <div
+    class="overflow-hidden absolute transition-[max-height] duration-700 ease-in-out max-h-0 text-white w-screen backdrop-blur-sm z-50 bg-gradient-to-b from-[rgba(80,87,167,0.9)] to-[rgba(42,20,107,0.9)] flex flex-col gap-y-7 md:flex-row"
+    :class="{
+      'max-h-screen p-4 md:py-6 md:px-8 2xl:px-14 2xl:py-10': showMenu,
+    }"
+    >
+    <button
+      class="absolute top-[3vw] right-[3vw] h-[30px] w-[30px] z-10 bg-[url('/svg/close.svg')] bg-contain bg-no-repeat"
+    ></button>
+    <div
+      class="md:my-4 md:border-r-2 md:pr-[5vw] flex flex-col items-center xs:items-start md:justify-between"
+    >
+      <div
+        class="grid grid-cols-[1fr_4fr] p-4 xl:p-8 gap-2 w-fit rounded-xl bg-[#0B0B18] items-center"
+      >
+        <img class="w-full" src="/public/svg/logo.svg" alt="" />
+        <div class="flex flex-col gap-y-2 items-start text-white">
+          <div class="text-3xl font-black xl:text-6xl">
+            <span class="text-purple-light">PP</span>-сервис
+          </div>
+          <div class="text-2xl md:text-xl xl:text-3xl">Оклейка автомобилей</div>
+        </div>
+      </div>
+      <div class="flex justify-between w-full mt-4 md:flex-col md:gap-7">
+        <div class="items-center gap-3 flex">
+          <img class="h-[45px]" src="/svg/phone-thin.svg" alt="" />
+          <a
+            href="tel:+7-495-499-88-22"
+            class="text-lg font-black lg:text-2xl xl:text-3xl"
+            >+7-495-499-88-22</a
+          >
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="#">
+            <img
+              class="md:w-[50px]"
+              src="/svg/whatsapp-small.svg"
+              alt="whatsapp"
+            />
+          </a>
+          <a href="#">
+            <img
+              class="md:w-[50px]"
+              src="/svg/telegram-small.svg"
+              alt="telegram"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex-shrink flex flex-col font-black text-base md:text-2xl md:pl-[5vw] lg:text-3xl"
+    >
+      <button
+        @click="scrollToElement('whatYouNeed')"
+        class="uppercase py-2 md:py-4 text-left border-white/20 hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
+      >
+        Что вам нужно?
+      </button>
+      <button
+        @click="scrollToElement('whyUs')"
+        class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
+      >
+        Почему мы?
+      </button>
+      <button
+        @click="scrollToElement('whereToOrder')"
+        class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
+      >
+        где заказать оклейку?
+      </button>
+      <button
+        @click="scrollToElement('materials')"
+        class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
+      >
+        С какой плёнкой мы работаем?
+      </button>
+      <button
+        @click="scrollToElement('projects')"
+        class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
+      >
+        Знаковые проекты
+      </button>
+      <button
+        @click="scrollToElement('salon')"
+        class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
+      >
+        оклейка салона
+      </button>
+      <button
+        @click="scrollToElement('faq')"
+        class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
+      >
+        Вопрос-ответ
+      </button>
+      <button
+        @click="scrollToElement('reviews')"
+        class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
+      >
+        Отзывы
+      </button>
+      <button
+        @click="scrollToElement('contacts')"
+        class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
+      >
+        Контакты
+      </button>
+    </div>
+  </div>
   <section
     class="relative before:bg-[url('/img/car-background.png')] before:block before:bg-[0_6%] lg:before:bg-[5rem_20%] 2xl:before:bg-[0_0] before:h-[130%] before:w-full before:absolute before:z-0 before:bg-contain before:bg-no-repeat"
   >
@@ -20,7 +129,7 @@
             <div class="text-sm sm:text-base">Оклейка автомобилей</div>
           </div>
         </div>
-        <button
+        <button @click="showMenu = true"
           class="border-purple-light ] flex h-fit items-center gap-2 self-center rounded-full border bg-transparent px-[1.5625vw] py-[calc(1px+1.5625vw)] md:py-2"
         >
           <img src="/svg/menu.svg" alt="" class="w-[21px]" />
@@ -88,6 +197,7 @@
     </header>
   </section>
   <section
+    id="whatYouWant"
     class="before:bg-[url('/img/bubbles.png')] before:block before:w-full before:h-full before:bg-contain before:bg-no-repeat before:absolute before:mt-[3rem] sm:before:-mt-[10vw] 2xl:before:-mt-[16rem]"
   >
     <div
@@ -244,6 +354,7 @@
     </div>
   </section>
   <section
+    id="whyUs"
     class="mt-[8vw] px-[20px] text-white md:px-[30px] xl:px-[40px] 2xl:px-[8vw]"
   >
     <h2 class="mb-12">Почему мы?</h2>
@@ -284,6 +395,7 @@
     </div>
   </section>
   <section
+    id="whereToOrder"
     class="px-[20px] py-[8vw] text-white md:px-[30px] xl:px-[40px] 2xl:px-[8vw]"
   >
     <h2 class="my-3 w-2/3 lg:my-6">где именно заказать оклейку?</h2>
@@ -388,6 +500,7 @@
     </div>
   </section>
   <section
+    id="materials"
     class="overflow-hidden bg-[#D9D9D9] py-[8vw] text-black xl:flex xl:justify-between"
   >
     <div
@@ -494,16 +607,16 @@
       alt=""
     />
   </section>
-  <section class="relative overflow-hidden">
+  <section id="projects" class="relative overflow-hidden">
     <img
       class="absolute left-0 top-0 z-0"
       src="/public/img/projects-background.png"
       alt=""
     />
     <div
-      class="relative z-10 p-[20px] pt-[8vw] md:p-[30px] xl:p-[40px] 2xl:p-[8vw]"
+      class="relative z-10 p-[20px] mt-[6vw] 2xl:mt-[1rem] md:p-[30px] xl:p-[40px] 2xl:p-[8vw]"
     >
-      <h2 class="mb-14 text-white">Знаковые проекты</h2>
+      <h2 class="2xl:mb-10 mb-6 text-white">Знаковые проекты</h2>
       <div
         class="relative grid grid-cols-1 gap-[2.7vw] md:right-[1%] md:grid-cols-3 md:pr-[1%]"
       >
@@ -599,7 +712,8 @@
     </div>
   </section>
   <section
-    class="relative mt-[8vw] px-[20px] text-white md:px-[30px] xl:px-[40px] 2xl:px-[8vw]"
+    id="salon"
+    class="relative mt-[calc(40px+4vw)] px-[20px] text-white md:px-[30px] xl:px-[40px] 2xl:px-[8vw]"
   >
     <img
       class="absolute right-0 top-0 z-0 -translate-y-28 md:opacity-35"
@@ -675,7 +789,7 @@
       </div>
     </div>
   </section>
-  <section class="relative my-[8vw]">
+  <section id="faq" class="relative my-[8vw]">
     <img class="t-0 l-0 absolute z-0" src="/public/svg/faq.svg" alt="" />
     <div
       class="relative z-10 p-[20px] py-[8vw] md:p-[30px] xl:p-[40px] 2xl:p-[8vw]"
@@ -819,6 +933,7 @@
     </div>
   </section>
   <section
+    id="reviews"
     class="flex flex-col gap-[2vw] bg-white p-[20px] py-[8vw] text-black md:p-[30px] xl:flex-row xl:gap-20 xl:p-[40px] 2xl:p-[8vw]"
   >
     <h2>Отзывы</h2>
@@ -852,10 +967,11 @@
     </div>
   </section>
   <footer
+    id="contacts"
     class="relative overflow-hidden text-white before:bg-[url('/img/bubble-and-gradient.png')] before:block before:h-[80%] before:w-[80%] before:bottom-[5%] md:before:right-0 md:before:top-[5%] before:absolute before:z-0 before:bg-right before:bg-cover before:bg-no-repeat"
   >
     <div
-      class="relative z-10 grid grid-cols-1 gap-[8vw] p-[20px] pt-[7vw] md:grid-cols-[1fr_3fr] md:px-[30px] xl:px-[40px] 2xl:p-[8vw]"
+      class="relative xl:mb-5 z-10 grid grid-cols-1 gap-[8vw] p-[20px] pt-[7vw] md:grid-cols-[1fr_3fr] md:px-[30px] xl:px-[40px] 2xl:p-[8vw]"
     >
       <div class="grid-column-start-1">
         <h2 class="mb-16">контакты</h2>
@@ -921,6 +1037,12 @@ export default {
       shipmentOption: "option1",
       company: "llumar",
     };
+  },
+  methods: {
+    scrollToElement(id) {
+      let element = document.getElementById(id);
+      element.scrollIntoView({ behavior: "smooth" });
+    },
   },
 };
 </script>
