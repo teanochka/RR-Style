@@ -1,15 +1,16 @@
 <template>
   <div
-    class="overflow-hidden absolute transition-[max-height] duration-700 ease-in-out max-h-0 text-white w-screen backdrop-blur-sm z-50 bg-gradient-to-b from-[rgba(80,87,167,0.9)] to-[rgba(42,20,107,0.9)] flex flex-col gap-y-7 md:flex-row"
+    class="overflow-hidden absolute transition-[max-height] duration-500 ease-in max-h-0 text-white w-screen backdrop-blur-sm z-50 bg-gradient-to-b from-[rgba(80,87,167,0.9)] to-[rgba(42,20,107,0.9)] flex flex-col gap-y-7 md:flex-row"
     :class="{
-      'max-h-screen p-4 md:py-6 md:px-8 2xl:px-14 2xl:py-10': showMenu,
+      'max-h-screen -my-0': isMenuVisible,
     }"
   >
     <button
+      @click="isMenuVisible = false"
       class="absolute top-[3vw] right-[3vw] h-[30px] w-[30px] z-10 bg-[url('/svg/close.svg')] bg-contain bg-no-repeat"
     ></button>
     <div
-      class="md:my-4 md:border-r-2 md:pr-[5vw] flex flex-col items-center xs:items-start md:justify-between"
+      class="p-4 md:py-6 md:px-8 2xl:px-14 2xl:py-10 md:my-4 md:border-r-2 md:pr-[5vw] flex flex-col items-center xs:items-start md:justify-between"
     >
       <div
         class="grid grid-cols-[1fr_4fr] p-4 xl:p-8 gap-2 w-fit rounded-xl bg-[#0B0B18] items-center"
@@ -50,7 +51,7 @@
       </div>
     </div>
     <div
-      class="flex-shrink flex flex-col font-black text-base md:text-2xl md:pl-[5vw] lg:text-3xl"
+      class="p-4 md:py-6 md:px-8 2xl:px-14 2xl:py-10 flex flex-col font-black text-base md:text-2xl md:pl-[5vw] lg:text-3xl"
     >
       <button
         @click="scrollToElement('whatYouNeed')"
@@ -130,7 +131,7 @@
           </div>
         </div>
         <button
-          @click="showMenu = true"
+          @click="isMenuVisible = true"
           class="border-purple-light ] flex h-fit items-center gap-2 self-center rounded-full border bg-transparent px-[1.5625vw] py-[calc(1px+1.5625vw)] md:py-2"
         >
           <img src="/svg/menu.svg" alt="" class="w-[21px]" />
@@ -1037,6 +1038,7 @@ export default {
       selectedOption: "option1",
       shipmentOption: "option1",
       company: "llumar",
+      isMenuVisible: false,
     };
   },
   methods: {
