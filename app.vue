@@ -4,7 +4,7 @@
     :class="{
       'max-h-screen p-4 md:py-6 md:px-8 2xl:px-14 2xl:py-10': showMenu,
     }"
-    >
+  >
     <button
       class="absolute top-[3vw] right-[3vw] h-[30px] w-[30px] z-10 bg-[url('/svg/close.svg')] bg-contain bg-no-repeat"
     ></button>
@@ -129,7 +129,8 @@
             <div class="text-sm sm:text-base">Оклейка автомобилей</div>
           </div>
         </div>
-        <button @click="showMenu = true"
+        <button
+          @click="showMenu = true"
           class="border-purple-light ] flex h-fit items-center gap-2 self-center rounded-full border bg-transparent px-[1.5625vw] py-[calc(1px+1.5625vw)] md:py-2"
         >
           <img src="/svg/menu.svg" alt="" class="w-[21px]" />
