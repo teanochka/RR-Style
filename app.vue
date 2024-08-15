@@ -1,8 +1,8 @@
 <template>
   <div
-    class="overflow-hidden absolute transition-[max-height] duration-500 ease-in max-h-0 text-white w-screen backdrop-blur-sm z-50 bg-gradient-to-b from-[rgba(80,87,167,0.9)] to-[rgba(42,20,107,0.9)] flex flex-col gap-y-7 md:flex-row"
+    class="overflow-hidden absolute transition-[height] duration-500 ease-in h-0 text-white w-screen backdrop-blur-sm z-50 bg-gradient-to-b from-[rgba(80,87,167,0.9)] to-[rgba(42,20,107,0.9)] flex flex-col gap-y-7 md:flex-row"
     :class="{
-      'max-h-screen -my-0': isMenuVisible,
+      'h-screen -my-0': isMenuVisible,
     }"
   >
     <button
@@ -53,151 +53,114 @@
     <div
       class="p-4 md:py-6 md:px-8 2xl:px-14 2xl:py-10 flex flex-col font-black text-base md:text-2xl md:pl-[5vw] lg:text-3xl"
     >
-      <button
-        @click="scrollToElement('whatYouNeed')"
+      <a
+        href="#whatYouWant"
+        @click="isMenuVisible = false"
         class="uppercase py-2 md:py-4 text-left border-white/20 hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
       >
         Что вам нужно?
-      </button>
-      <button
-        @click="scrollToElement('whyUs')"
+      </a>
+      <a
+        href="#whyUs"
+        @click="isMenuVisible = false"
         class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
       >
         Почему мы?
-      </button>
-      <button
-        @click="scrollToElement('whereToOrder')"
+      </a>
+      <a
+        href="#whereToOrder"
+        @click="isMenuVisible = false"
         class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
       >
         где заказать оклейку?
-      </button>
-      <button
-        @click="scrollToElement('materials')"
+      </a>
+      <a
+        href="#materials"
+        @click="isMenuVisible = false"
         class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
       >
         С какой плёнкой мы работаем?
-      </button>
-      <button
-        @click="scrollToElement('projects')"
+      </a>
+      <a
+        href="#projects"
+        @click="isMenuVisible = false"
         class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
       >
         Знаковые проекты
-      </button>
-      <button
-        @click="scrollToElement('salon')"
+      </a>
+      <a
+        href="#salon"
+        @click="isMenuVisible = false"
         class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
       >
         оклейка салона
-      </button>
-      <button
-        @click="scrollToElement('faq')"
+      </a>
+      <a
+        href="#faq"
+        @click="isMenuVisible = false"
         class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
       >
         Вопрос-ответ
-      </button>
-      <button
-        @click="scrollToElement('reviews')"
+      </a>
+      <a
+        href="#reviews"
+        @click="isMenuVisible = false"
         class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
       >
         Отзывы
-      </button>
-      <button
-        @click="scrollToElement('contacts')"
+      </a>
+      <a
+        href="#contacts"
+        @click="isMenuVisible = false"
         class="uppercase py-2 md:py-4 text-left border-white/20 border-t-[0.1px] hover:bg-gradient-to-b from-white/5 to-white/10 md:hover:bg-none md:border-0"
       >
         Контакты
-      </button>
+      </a>
     </div>
   </div>
-  <section
-    class="relative before:bg-[url('/img/car-background.png')] before:block before:bg-[0_6%] lg:before:bg-[5rem_20%] 2xl:before:bg-[0_0] before:h-[130%] before:w-full before:absolute before:z-0 before:bg-contain before:bg-no-repeat"
+  <nav
+    class="sticky top-0 z-40 flex items-center justify-between px-[20px] py-6 sm:py-6 md:px-[30px] xl:px-[4vw]"
   >
-    <img
-      class="absolute left-0 top-0 z-10 w-1/2 -translate-y-9 sm:w-1/3 sm:translate-y-0"
-      src="/public/img/curve.png"
-      alt=""
-    />
-    <nav
-      class="relative z-40 flex items-center justify-between px-[20px] py-6 sm:py-6 md:px-[30px] xl:px-[4vw]"
-    >
-      <div class="flex flex-row-reverse gap-4 md:flex-row lg:gap-[6vw]">
-        <div class="grid grid-cols-[1fr_4fr] items-center">
-          <img class="col-start-1 h-[80%]" src="/public/svg/logo.svg" alt="" />
-          <div class="col-start-2 flex flex-col items-start text-white">
-            <div class="text-2xl font-black sm:text-3xl">
-              <span class="text-purple-light">PP</span>-сервис
-            </div>
-            <div class="text-sm sm:text-base">Оклейка автомобилей</div>
+    <div class="flex flex-row-reverse gap-4 md:flex-row lg:gap-[6vw]">
+      <div class="grid grid-cols-[1fr_4fr] items-center">
+        <img class="col-start-1 h-[80%]" src="/public/svg/logo.svg" alt="" />
+        <div class="col-start-2 flex flex-col items-start text-white">
+          <div class="text-2xl font-black sm:text-3xl">
+            <span class="text-purple-light">PP</span>-сервис
           </div>
-        </div>
-        <button
-          @click="isMenuVisible = true"
-          class="border-purple-light ] flex h-fit items-center gap-2 self-center rounded-full border bg-transparent px-[1.5625vw] py-[calc(1px+1.5625vw)] md:py-2"
-        >
-          <img src="/svg/menu.svg" alt="" class="w-[21px]" />
-          <div class="hidden text-lg text-white md:block">Меню</div>
-        </button>
-      </div>
-      <div class="flex gap-2 lg:gap-[6vw]">
-        <div class="flex gap-[2.5vw] self-center">
-          <a href="#">
-            <img src="/svg/whatsapp-small.svg" alt="" />
-          </a>
-          <a href="#">
-            <img class="translate-y-1" src="/svg/telegram-small.svg" alt="" />
-          </a>
-        </div>
-        <div class="hidden items-center gap-3 sm:flex">
-          <img class="h-[20px] md:h-[30px]" src="/svg/phone.svg" alt="" />
-          <a
-            href="tel:+7-495-499-88-22"
-            class="text-lg font-black lg:text-2xl xl:text-3xl"
-            >+7-495-499-88-22</a
-          >
+          <div class="text-sm sm:text-base">Оклейка автомобилей</div>
         </div>
       </div>
-    </nav>
-    <header
-      class="relative z-10 my-4 px-[20px] text-white md:px-[30px] 2xl:my-12 xl:px-[80px] 2xl:px-[8vw]"
-    >
-      <div class="">
-        <h1
-          class="flex w-1/2 flex-col font-black uppercase leading-tight xl:w-2/3"
-        >
-          Оклейка защитной плёнкой
-        </h1>
-        <div class="my-5 text-lg sm:w-1/2 md:text-xl xl:w-3/5 xl:text-2xl">
-          Оклейка защитной и матовой плёнкой кузова и салона авто и тонировка в
-          РР-свервисе.
-        </div>
-        <div
-          class="grid grid-cols-1 justify-between gap-4 sm:gap-[1.15vw] md:grid-cols-3 lg:w-[62vw] xl:w-[54vw] 2xl:w-[48vw]"
-        >
-          <InfoCard
-            title="Мы - одни из первых"
-            info="Наши специалисты работают с оклейкой авто с момента появления защитных пленок в России"
-          />
-          <InfoCard
-            title="0% брака"
-            info="В работе мы используем только проверенные и качественные плёнки от легальных производителей."
-          />
-          <InfoCard
-            title="Занимаемся только пленками"
-            info="Мы не распыляемся на большое количество разных услуг по детейлингу и рестайлингу."
-          />
-        </div>
-        <div
-          class="outline-purple-light my-8 flex flex-wrap items-center justify-center gap-2 gap-y-6 rounded-3xl p-5 pl-[2%] outline-dashed outline-2 md:rounded-full xl:my-10"
-          style="width: fit-content"
-        >
-          <div class="text-center text-lg font-black">
-            Хотите узнать стоимость? Пришлие фото на
-          </div>
-          <ContactButtons></ContactButtons>
-        </div>
+      <button
+        @click="isMenuVisible = true"
+        class="border-purple-light ] flex h-fit items-center gap-2 self-center rounded-full border bg-transparent px-[1.5625vw] py-[calc(1px+1.5625vw)] md:py-2"
+      >
+        <img src="/svg/menu.svg" alt="" class="w-[21px]" />
+        <div class="hidden md:block text-lg text-white">Меню</div>
+      </button>
+    </div>
+    <div class="flex gap-2 lg:gap-[6vw]">
+      <div class="flex gap-[2.5vw] self-center">
+        <a href="#">
+          <img src="/svg/whatsapp-small.svg" alt="" />
+        </a>
+        <a href="#">
+          <img class="translate-y-1" src="/svg/telegram-small.svg" alt="" />
+        </a>
       </div>
-    </header>
-  </section>
+      <div class="hidden items-center gap-3 sm:flex">
+        <img class="h-[20px] md:h-[30px]" src="/svg/phone.svg" alt="" />
+        <a
+          href="tel:+7-495-499-88-22"
+          class="text-lg font-black lg:text-2xl xl:text-3xl"
+          >+7-495-499-88-22</a
+        >
+      </div>
+    </div>
+  </nav>
+<section>
+  <AboutUs></AboutUs>
+</section>
   <section
     id="whatYouWant"
     class="before:bg-[url('/img/bubbles.png')] before:block before:w-full before:h-full before:bg-contain before:bg-no-repeat before:absolute before:mt-[3rem] sm:before:-mt-[10vw] 2xl:before:-mt-[16rem]"
@@ -242,7 +205,7 @@
         </button>
       </div>
       <div
-        class="rounded-b-lg rounded-tr-lg bg-white p-[calc(12px+1.5625vw)] text-black"
+        class="rounded-b-lg rounded-tr-lg bg-[#E7E7E7] p-[calc(12px+1.5625vw)] text-black bg-gradient-to-b from-white to-30% to-transparent"
       >
         <div
           v-if="selectedOption === 'option1'"
@@ -319,7 +282,7 @@
           <h2 class="normal-case leading-tight text-black">
             Выберите интересующий Вас комплекс
           </h2>
-          <div class="grid grid-cols-1 lg:grid-cols-3">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-[1.2vw]">
             <ServiceCard
               type="Обязательн"
               percent="60"
@@ -719,7 +682,7 @@
   >
     <img
       class="absolute right-0 top-0 z-0 -translate-y-28 md:opacity-35"
-      src="/public/img/salon.png"
+      src="/img/salon.png"
       alt="salon"
     />
     <div class="relative z-10">
@@ -1024,11 +987,13 @@
 </template>
 
 <script>
+import AboutUs from "./assets/components/about-us.vue";
 import ContactButtons from "./assets/components/contact-buttons.vue";
 import InfoCard from "./assets/components/info-card.vue";
 import ServiceCard from "./assets/components/service-card.vue";
 export default {
   components: {
+    AboutUs,
     InfoCard,
     ServiceCard,
     ContactButtons,

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-1 flex-col justify-between rounded-lg bg-[#E7E7E7] p-1 text-base lg:p-5 lg:text-lg"
+    class="flex flex-1 flex-col justify-between rounded-lg bg-white/5 p-1 text-base lg:p-5 lg:text-lg"
   >
     <div class="relative">
       <div
