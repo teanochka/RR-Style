@@ -19,10 +19,10 @@
     @apply font-bold;
   }
   h1 {
-    @apply text-[20px] sm:text-[30px] lg:text-[35px] xl:text-[50px] 2xl:text-[60px];
+    @apply text-[20px] xs:text-[30px] lg:text-[35px] xl:text-[50px] 2xl:text-[60px];
   }
   h2 {
-    @apply text-[30px] sm:text-[35px] lg:text-[40px] xl:text-[60px] 2xl:text-[70px];
+    @apply text-[30px] sm:text-[35px] md:text-[40px] lg:text-[50px] xl:text-[60px] 2xl:text-[70px];
   }
   h3 {
     @apply text-[17px] sm:text-[20px] lg:text-[25px] 2xl:text-[30px];

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-1 flex-col justify-between rounded-lg bg-white/5 p-1 text-base lg:p-5 lg:text-lg"
+    class="flex flex-1 flex-col backdrop-blur-xl justify-between rounded-lg bg-white/5 p-1 text-base lg:p-3 xl:p-5 lg:text-lg"
   >
     <div class="relative">
       <div
@@ -14,21 +14,23 @@
       <img :src="imgSrc" alt="bmv-cover1" />
       <div
         :class="[`gradient-${gradientClass}`]"
-        class="absolute right-0 top-0 w-1/2 rounded-lg px-2 py-1 text-white sm:p-[0.8vw] lg:relative lg:w-full"
+        class="absolute right-0 top-0 w-1/2 rounded-xl p-3 text-white xl:p-[1vw] lg:relative lg:w-full"
       >
         <div
-          class="mb-1 text-sm font-bold leading-tight sm:text-base lg:text-2xl xl:text-3xl"
+          class="mb-1 text-sm font-bold leading-tight sm:text-base lg:text-[17px] xl:text-[20px] 2xl:text-3xl"
         >
           Защищает автомобиль на
         </div>
-        <div class="grid grid-cols-2 grid-rows-2">
+        <div
+          class="grid grid-cols-2 grid-rows-2 xl:gap-x-0 lg:gap-x-6 sm:auto-rows-max"
+        >
           <div
             class="col-start-1 row-start-1 text-lg font-black sm:text-3xl xl:text-4xl 2xl:text-6xl"
           >
             100%
           </div>
           <div
-            class="col-start-2 row-start-1 text-sm font-normal leading-4 sm:col-start-1 sm:row-start-2 sm:text-base xl:text-2xl 2xl:text-2xl"
+            class="col-start-2 row-start-1 text-sm font-normal leading-4 sm:col-start-1 sm:row-start-2 sm:text-base lg:text-[17px] xl:text-2xl 2xl:text-2xl"
           >
             В зонах риска
           </div>
@@ -74,7 +76,7 @@
       <div class="my-5 p-2 text-black">{{ description }}</div>
     </div>
     <div
-      class="relative mb-5 mt-auto grid grid-rows-2 gap-5 rounded-lg p-4 text-[17px] text-white lg:grid-rows-[90px_minmax(0,1fr)] xl:text-2xl 2xl:grid-rows-[100px_minmax(0,1fr)] 2xl:text-3xl"
+      class="relative mb-5 mt-auto grid grid-rows-2 gap-5 rounded-xl p-4 text-[17px] text-white lg:grid-rows-[90px_minmax(0,1fr)] xl:text-2xl 2xl:grid-rows-[100px_minmax(0,1fr)] 2xl:text-3xl"
       style="
         background-image: linear-gradient(
           44deg,
