@@ -5,7 +5,7 @@
       class="relative z-10 px-[20px] my-16 xl:my-20 2xl:my-24 md:px-[30px] xl:px-[40px] 2xl:px-[8vw]"
     >
       <div class="flex flex-col items-start gap-[8vw] xl:flex-row">
-        <h2>вопрос-ответ</h2>
+        <h2 class="text-white">вопрос-ответ</h2>
         <div class="flex flex-col gap-4 text-white xl:w-4/5">
           <div
             v-for="(item, index) in questions"

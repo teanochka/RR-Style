@@ -1,5 +1,6 @@
 <template>
   <div
+    @wheel.prevent @touchmove.prevent @scroll.prevent
     class="overflow-hidden fixed transition-[height] top-0 duration-500 ease-in h-0 text-white w-screen backdrop-blur-sm z-50 bg-gradient-to-b from-[rgba(80,87,167,0.9)] to-[rgba(42,20,107,0.9)] flex flex-col gap-y-7 md:flex-row"
     :class="{
       'h-screen -my-0': isMenuVisible,
@@ -124,7 +125,7 @@
     :class="{
       'bg-gradient-to-b backdrop-blur-sm from-black/80 via-black/70 to-black/35 sticky':
         isSticky,
-        // 'relative': !isSticky,
+      // 'relative': !isSticky,
     }"
   >
     <div class="flex flex-row-reverse gap-4 md:flex-row lg:gap-[6vw]">
@@ -259,6 +260,7 @@ export default {
 
       this.isSticky = windowTop > 0;
     },
+
   },
 };
 </script>
