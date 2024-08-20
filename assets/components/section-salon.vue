@@ -1,5 +1,6 @@
 <template>
-  <div
+  <section
+    id="salon"
     class="relative mt-[calc(40px+4vw)] px-[20px] text-white md:px-[30px] xl:px-[40px] 2xl:px-[8vw] my-16 xl:my-20 2xl:my-24"
   >
     <img
@@ -8,15 +9,23 @@
       alt="salon"
     />
     <div class="relative z-10 2xl:w-4/5">
-      <h2 class="mb-8 lg:mb-12 leading-tight xl:w-2/3 2xl:w-full">Также мы занимаемся оклейкой салона</h2>
-      <div class="my-3 w-full xl:w-4/5 2xl:w-full lg:my-4 text-[22px] font-normal xl:my-6 md:text-[25px] 2xl:text-3xl">
+      <h2 class="mb-8 lg:mb-12 leading-tight xl:w-2/3 2xl:w-full">
+        Также мы занимаемся оклейкой салона
+      </h2>
+      <div
+        class="my-3 w-full xl:w-4/5 2xl:w-full lg:my-4 text-[22px] font-normal xl:my-6 md:text-[25px] 2xl:text-3xl"
+      >
         Оклейка салона делается только дорогой плёнкой, т.к. работа тонкая, есть
         много мелких деталей и важна качественная тактильность.
       </div>
-      <div class="my-8 md:my-5 2xl:my-6 text-[25px] lg:text-3xl xl:text-4xl font-normal text-[#949CFF]">
+      <div
+        class="my-8 md:my-5 2xl:my-6 text-[25px] lg:text-3xl xl:text-4xl font-normal text-[#949CFF]"
+      >
         Почему нужно обратиться именно к нам?
       </div>
-      <div class="mb-14 lg:w-[97%] xl:w-4/5 2xl:w-full grid gap-12 xl:gap-20 2xl:gap-22 md:grid-cols-3">
+      <div
+        class="mb-14 lg:w-[97%] xl:w-4/5 2xl:w-full grid gap-12 xl:gap-20 2xl:gap-22 md:grid-cols-3"
+      >
         <div class="flex-1">
           <img
             src="/public/svg/big-cross.svg"
@@ -66,22 +75,22 @@
         </div>
       </div>
       <div
-      class="outline-purple-light my-8 p-3 flex flex-wrap items-center justify-center gap-2 gap-y-6 rounded-3xl ap-3 2xl:p-4 outline-dashed outline-2 md:rounded-full xl:my-10"
-      style="width: fit-content"
-    >
-      <div class="text-center ml-4 text-lg md:text-[17px] font-black">
-        Хотите узнать стоимость? Пришлие фото на
+        class="outline-purple-light my-8 p-3 flex flex-wrap items-center justify-center gap-2 gap-y-6 rounded-3xl ap-3 2xl:p-4 outline-dashed outline-2 md:rounded-full xl:my-10"
+        style="width: fit-content"
+      >
+        <div class="text-center ml-4 text-lg md:text-[17px] font-black">
+          Хотите узнать стоимость? Пришлие фото на
+        </div>
+        <ContactButtons></ContactButtons>
       </div>
-      <ContactButtons></ContactButtons>
     </div>
-    </div>
-  </div>
+  </section>
 </template>
 <script>
-    import ContactButtons from "./assets/components/contact-buttons.vue";
-    export default {
-    components: {
-        ContactButtons,
-    },
- }
+import ContactButtons from "./assets/components/contact-buttons.vue";
+export default {
+  components: {
+    ContactButtons,
+  },
+};
 </script>

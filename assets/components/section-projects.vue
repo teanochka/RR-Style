@@ -1,5 +1,5 @@
 <template>
-  <div class="relative overflow-hidden">
+  <section id="projects" class="relative overflow-hidden text-white">
     <img
       class="absolute left-0 top-0 z-0"
       src="/public/img/projects-background.png"
@@ -19,25 +19,12 @@
           :key="index"
           class="relative flex gap-[5vw] md:flex-col md:gap-0"
         >
-          <img
-            class="absolute left-0 top-0 z-0 w-[25%] md:w-[22%] lg:h-auto lg:w-[62%]"
-            src="/public/svg/logo-dark.svg"
-            alt=""
+          <Project
+            :title="project.title"
+            :image="project.image"
+            :description="project.description"
+            :date="project.date"
           />
-          <div
-            class="relative z-10 pl-[calc(10px+1.4vw)] pt-[calc(10px+1.4vw)] grid grid-cols-[2fr_3fr] md:grid-cols-[2fr_4fr] gap-x-[5%] sm:gap-x-6 gap-y-[4%] lg:grid-cols-1"
-          >
-            <img :src="project.image" :alt="project.title" />
-            <div>
-              <h3>{{ project.title }}</h3>
-              <div class="my-5 text-[17px xl:text-2xl font-normal">
-                {{ project.description }}
-              </div>
-              <div class="text-lg font-normal text-[#999999]">
-                {{ project.date }}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <div class="flex flex-col justify-center">
@@ -46,17 +33,27 @@
           class="text-normal my-12 lg:my-16 2xl:mt-24 w-max self-center rounded-full bg-white px-10 py-4 text-2xl text-black hover:bg-[#5057A7] hover:text-white"
           @click="showMoreProjects"
         >
-          Показать еще {{ remainingProjects - 3 }} работ
+          Показать еще {{ remainingProjects - 3 }}
+          {{ declOfNum(remainingProjects - 3) }}
+        </button>
+        <button
+          v-else
+          class="text-normal my-12 lg:my-16 2xl:mt-24 w-max self-center rounded-full bg-white px-10 py-4 text-2xl text-black hover:bg-[#5057A7] hover:text-white"
+          @click="showLessProjects(), $emit('scrollToSection', 'projects')"
+        >
+          Свернуть
         </button>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <script>
+import Project from "./project.vue";
 import ContactButtons from "./assets/components/contact-buttons.vue";
 export default {
   components: {
     ContactButtons,
+    Project,
   },
   data() {
     return {
@@ -138,6 +135,21 @@ export default {
       const newCount = currentCount + 3;
       this.displayedProjects = this.projects.slice(0, newCount);
       this.remainingProjects -= 3;
+    },
+    showLessProjects() {
+      const currentCount = this.displayedProjects.length;
+      const newCount = 3;
+      this.displayedProjects = this.projects.slice(0, 3);
+      this.remainingProjects = currentCount;
+    },
+    declOfNum(number) {
+      const words = ["работа", "работы", "работ"];
+      const cases = [2, 0, 1, 1, 1, 2];
+      return words[
+        number % 100 > 4 && number % 100 < 20
+          ? 2
+          : cases[number % 10 < 5 ? number % 10 : 5]
+      ];
     },
   },
 };

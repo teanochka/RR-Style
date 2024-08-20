@@ -1,5 +1,5 @@
 <template>
-  <div
+  <section id="materials"
     class="overflow-hidden bg-[#D9D9D9] py-12 sm:py-14 lg:py-16 xl:py-22 text-black xl:flex xl:justify-between"
   >
     <div
@@ -105,7 +105,7 @@
       src="/public/img/wrap.png"
       alt=""
     />
-  </div>
+  </section>
 </template>
 <script>
 export default {

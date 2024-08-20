@@ -1,5 +1,7 @@
 <template>
-        <div class="flex flex-col gap-[2vw] bg-white p-[20px] my-16 xl:my-18 text-black md:p-[30px] xl:flex-row xl:gap-20 xl:p-[40px] 2xl:p-[8vw]"
+  <section
+    id="reviews"
+    class="flex flex-col gap-[2vw] bg-white p-[20px] my-16 xl:my-18 text-black md:p-[30px] xl:flex-row xl:gap-20 xl:p-[40px] 2xl:p-[8vw]"
   >
     <h2>Отзывы</h2>
     <div class="h-[800px] w-full overflow-hidden sm:w-[560px]">
@@ -30,5 +32,5 @@
         >Усадьба Измайлово на карте Москвы — Яндекс.Карты</a
       >
     </div>
-</div>
+  </section>
 </template>

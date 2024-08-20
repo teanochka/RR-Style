@@ -1,8 +1,12 @@
 <template>
-  <div
+  <section
+    id="whatYouWant"
     class="relative z-20 mt-16 xl:mt-24 sm:px-[20px] md:px-[30px] xl:px-[40px] 2xl:px-[8vw]"
   >
-    <img src="/img/bubbles.png" class="absolute z-0 top-[2%] sm:-top-0 md:-top-[3%] lg:-top-[6%] left-0" />
+    <img
+      src="/img/bubbles.png"
+      class="absolute z-0 top-[2%] sm:-top-0 md:-top-[3%] lg:-top-[6%] left-0"
+    />
     <div class="relative z-10">
       <h2 class="mb-6 lg:mb-10 ml-3 text-white sm:ml-0 xl:mb-14 2xl:mb-36">
         Что вам нужно?
@@ -120,7 +124,9 @@
           <h2 class="normal-case leading-tight text-black">
             Выберите интересующий Вас комплекс
           </h2>
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-y-3 sm:gap-y-4 gap-2 xl:gap-[1.2vw]">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-3 gap-y-3 sm:gap-y-4 gap-2 xl:gap-[1.2vw]"
+          >
             <ServiceCard
               type="Обязательн"
               percent="60"
@@ -155,7 +161,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <script>
 import ContactButtons from "./assets/components/contact-buttons.vue";

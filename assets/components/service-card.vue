@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-1 flex-col backdrop-blur-xl justify-between rounded-lg bg-white/5 p-1 text-base lg:p-3 xl:p-5 lg:text-lg"
+    class="flex flex-1 flex-col shadow-[inset_0_0_2vw_rgba(255,255,255,0.8)] backdrop-blur-xl justify-between rounded-lg bg-white/5 p-1 text-base lg:p-3 xl:p-5 lg:text-lg"
   >
     <div class="relative">
       <div

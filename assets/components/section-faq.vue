@@ -1,6 +1,6 @@
 <template>
-  <div class="relative my-[8vw]">
-    <img class="t-0 l-0 absolute z-0" src="/public/svg/faq.svg" alt="" />
+  <section id="faq" class="relative my-[8vw]">
+    <img class="t-0 l-0 absolute -z-10" src="/public/svg/faq.svg" alt="" />
     <div
       class="relative z-10 px-[20px] my-16 xl:my-20 2xl:my-24 md:px-[30px] xl:px-[40px] 2xl:px-[8vw]"
     >
@@ -12,30 +12,19 @@
             :key="index"
             class="group rounded-lg border-2 border-white/[0.15] bg-[rgba(255,255,255,0.10)] px-10 py-7"
           >
-            <div class="grid grid-cols-[50px_1fr] gap-4">
-              <button @click="toggleAnswer(index)">
-                <img
-                  v-if="!item.showAnswer"
-                  src="/public/svg/plus.svg"
-                  alt="+"
-                />
-                <img v-else src="/public/svg/minus.svg" alt="-" />
-              </button>
-              <div class="text-2xl font-bold">
-                {{ item.question }}
-              </div>
-            </div>
-            <div v-if="item.showAnswer" class="mt-4 pl-14 text-lg font-normal">
-              {{ item.answer }}
-            </div>
+          <Question :item="item" />
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <script>
+import Question from './question.vue';
 export default {
+  components: {
+    Question,
+  },
   data() {
     return {
       questions: [

@@ -1,5 +1,6 @@
 <template>
-  <div
+  <section
+    id="whyUs"
     class="my-16 xl:my-32 px-[20px] text-white md:px-[30px] xl:px-[40px] 2xl:px-[8vw]"
   >
     <h2 class="mb-12">Почему мы?</h2>
@@ -38,5 +39,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
