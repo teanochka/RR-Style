@@ -1,8 +1,12 @@
 <template>
   <section id="whereToOrder">
     <div
-      class="absolute right-0 -z-10 h-full w-full bg-[url('/img/where-to-order.png')] bg-contain bg-right-top bg-no-repeat opacity-30 sm:translate-x-28 md:w-[57vw] md:translate-x-14 md:opacity-100 lg:my-14 lg:translate-x-12 xl:my-0 xl:translate-x-0 2xl:-my-32"
-    ></div>
+      class="absolute flex h-full w-full justify-end overflow-hidden lg:my-14 xl:my-0 2xl:-my-32"
+    >
+      <div
+        class="relative right-0 -z-10 h-full w-full bg-[url('/img/where-to-order.png')] bg-contain bg-right-top bg-no-repeat opacity-30 sm:translate-x-28 md:w-[57vw] md:translate-x-14 md:opacity-100 lg:translate-x-12 xl:translate-x-0"
+      ></div>
+    </div>
     <div
       class="relative z-10 my-20 px-[20px] text-white md:px-[30px] lg:my-24 xl:my-28 xl:px-[40px] 2xl:my-32 2xl:px-[8vw]"
     >
@@ -108,8 +112,7 @@
         </div>
       </div>
       <div
-        class="ap-3 my-8 flex flex-wrap items-center justify-center gap-2 gap-y-6 rounded-3xl p-3 outline-dashed outline-2 outline-purple-light md:rounded-full xl:my-10 2xl:p-4"
-        style="width: fit-content"
+        class="ap-3 my-8 flex w-fit flex-wrap items-center justify-center gap-2 gap-y-6 rounded-3xl p-3 outline-dashed outline-2 outline-purple-light md:rounded-full xl:my-10 2xl:p-4"
       >
         <div class="ml-4 text-center text-lg font-black md:text-[17px]">
           Хотите узнать стоимость? Пришлие фото на
