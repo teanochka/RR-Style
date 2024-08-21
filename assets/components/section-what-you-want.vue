@@ -1,14 +1,13 @@
 <template>
   <section
     id="whatYouWant"
-    class="relative z-20 mt-16 xl:mt-24 sm:px-[20px] md:px-[30px] xl:px-[40px] 2xl:px-[8vw]"
+    class="relative z-20 mt-16 sm:px-[20px] md:px-[30px] xl:mt-24 xl:px-[40px] 2xl:px-[8vw]"
   >
-    <img
-      src="/img/bubbles.png"
-      class="absolute z-0 top-[2%] sm:-top-0 md:-top-[3%] lg:-top-[6%] left-0"
-    />
+    <div
+      class="absolute left-0 top-[2%] z-0 h-full w-full bg-[url('/img/bubbles.png')] bg-contain bg-no-repeat sm:-top-0 md:-top-[2%] lg:-top-[3%] 2xl:top-0"
+    ></div>
     <div class="relative z-10">
-      <h2 class="mb-6 lg:mb-10 ml-3 text-white sm:ml-0 xl:mb-14 2xl:mb-36">
+      <h2 class="mb-6 ml-3 text-white sm:ml-0 lg:mb-10 xl:mb-14 2xl:mb-36">
         Что вам нужно?
       </h2>
       <div class="flex gap-[0.1vw]">
@@ -47,7 +46,7 @@
         </button>
       </div>
       <div
-        class="rounded-b-lg rounded-tr-lg bg-[#E7E7E7] p-[calc(12px+1.5625vw)] text-black bg-gradient-to-b from-white to-30% to-transparent"
+        class="rounded-b-lg rounded-tr-lg bg-[#E7E7E7] bg-gradient-to-b from-white to-transparent to-30% p-[calc(12px+1.5625vw)] text-black"
       >
         <div
           v-if="selectedOption === 'option1'"
@@ -57,12 +56,13 @@
             class="auto-rows-min gap-[3vw] gap-y-2 md:grid md:grid-cols-[minmax(273px,1fr)_minmax(0,1.5fr)] md:grid-rows-2"
           >
             <div
-              class="col-span-1 col-start-2 row-span-1 row-start-1 mb-6 text-3xl font-bold lg:text-4xl leading-[50px] 2xl:text-[40px]"
+              class="col-span-1 col-start-2 row-span-1 row-start-1 mb-6 text-[30px] font-bold leading-tight lg:text-[36px] 2xl:text-[40px]"
             >
               Оклейка плёнкой кузова автомобиля необходима для его защиты от
               главных проблем, с которыми сталкиваются водители на дорогах.
             </div>
             <img
+              loading="lazy"
               class="col-span-1 col-start-1 row-span-1 row-start-1 w-full xl:row-span-2"
               src="/public/img/wraping.png"
               alt=""
@@ -70,14 +70,15 @@
             <div
               class="col-span-2 col-start-1 row-span-1 row-start-2 xl:col-span-1 xl:col-start-2"
             >
-              <div class="text-purple-vivid mb-4 xl:mb-7 text-3xl font-bold">
+              <div class="mb-4 text-3xl font-bold text-purple-vivid xl:mb-7">
                 Нанесение плёнки поможет:
               </div>
               <div
-                class="flex flex-col gap-3 xl:gap-4 text-lg font-normal lg:text-xl"
+                class="flex flex-col gap-3 text-lg font-normal lg:text-xl xl:gap-4"
               >
                 <div class="flex items-center gap-[calc(6px+1vw)]">
                   <img
+                    loading="lazy"
                     src="/public/svg/violet-shield-wo-shadow.svg"
                     alt=""
                     class="translate-y-1"
@@ -91,6 +92,7 @@
                 </div>
                 <div class="flex items-center gap-[calc(6px+1vw)]">
                   <img
+                    loading="lazy"
                     src="/public/svg/violet-shield-wo-shadow.svg"
                     alt=""
                     class="translate-y-1"
@@ -107,6 +109,7 @@
                 </div>
                 <div class="flex items-center gap-[calc(6px+1vw)]">
                   <img
+                    loading="lazy"
                     src="/public/svg/violet-shield-wo-shadow.svg"
                     alt=""
                     class="translate-y-1"
@@ -125,7 +128,7 @@
             Выберите интересующий Вас комплекс
           </h2>
           <div
-            class="grid grid-cols-1 lg:grid-cols-3 gap-y-3 sm:gap-y-4 gap-2 xl:gap-[1.2vw]"
+            class="grid grid-cols-1 gap-2 gap-y-3 sm:gap-y-4 lg:grid-cols-3 xl:gap-[1.2vw]"
           >
             <ServiceCard
               type="Обязательн"

@@ -1,8 +1,8 @@
 <template>
   <section id="faq" class="relative my-[8vw]">
-    <img class="t-0 l-0 absolute -z-10" src="/public/svg/faq.svg" alt="" />
+    <div class="bg-[url('/svg/faq.svg')] t-0 l-0 h-full w-full bg-left-top bg-contain bg-no-repeat absolute -z-10"  alt="" />
     <div
-      class="relative z-10 px-[20px] my-16 xl:my-20 2xl:my-24 md:px-[30px] xl:px-[40px] 2xl:px-[8vw]"
+      class="relative z-10 my-16 px-[20px] md:px-[30px] xl:my-20 xl:px-[40px] 2xl:my-24 2xl:px-[8vw]"
     >
       <div class="flex flex-col items-start gap-[8vw] xl:flex-row">
         <h2 class="text-white">вопрос-ответ</h2>
@@ -10,9 +10,9 @@
           <div
             v-for="(item, index) in questions"
             :key="index"
-            class="group rounded-lg border-2 border-white/[0.15] bg-[rgba(255,255,255,0.10)] px-10 py-7"
+            class="group rounded-lg border-2 border-white/[0.15] bg-[rgba(255,255,255,0.10)] px-5 md:px-7 lg:px-10 py-5 lg:py-7"
           >
-          <Question :item="item" />
+            <Question :item="item" />
           </div>
         </div>
       </div>
@@ -20,7 +20,7 @@
   </section>
 </template>
 <script>
-import Question from './question.vue';
+import Question from "./question.vue";
 export default {
   components: {
     Question,

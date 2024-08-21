@@ -1,26 +1,24 @@
 <template>
   <section id="whereToOrder">
-    <img
-      class="absolute right-0 -z-10 lg:my-14 xl:my-0 2xl:-my-32 sm:translate-x-28 md:translate-x-14 lg:translate-x-12 xl:translate-x-0 w-full opacity-30 md:opacity-100 md:w-[57vw]"
-      src="/img/where-to-order.png"
-      alt=""
-    />
     <div
-      class="relative z-10 px-[20px] my-20 lg:my-24 xl:my-28 2xl:my-32 text-white md:px-[30px] xl:px-[40px] 2xl:px-[8vw]"
+      class="absolute right-0 -z-10 h-full w-full bg-[url('/img/where-to-order.png')] bg-contain bg-right-top bg-no-repeat opacity-30 sm:translate-x-28 md:w-[57vw] md:translate-x-14 md:opacity-100 lg:my-14 lg:translate-x-12 xl:my-0 xl:translate-x-0 2xl:-my-32"
+    ></div>
+    <div
+      class="relative z-10 my-20 px-[20px] text-white md:px-[30px] lg:my-24 xl:my-28 xl:px-[40px] 2xl:my-32 2xl:px-[8vw]"
     >
-      <h2 class="w-[70%] xl:w-2/3 leading-tight">
+      <h2 class="w-[70%] leading-tight xl:w-2/3">
         где именно заказать оклейку?
       </h2>
       <div
-        class="my-3 w-full md:w-2/3 lg:w-full lg:my-4 text-[22px] font-normal xl:my-6 md:text-[25px] xl:text-3xl"
+        class="my-3 w-full text-[22px] font-normal md:w-2/3 md:text-[25px] lg:my-4 lg:w-full xl:my-6 xl:text-3xl"
       >
         Наглядно покажем чем мы отличаемся от других мест
       </div>
       <div
-        class="bg-purple-dark mt-8 mb-8 xl:mb-14 flex w-max rounded-full p-2 text-[17px] sm:text-[20px] xl:text-[25px]"
+        class="mb-8 mt-8 flex w-max rounded-full bg-purple-dark p-2 text-[17px] sm:text-[20px] xl:mb-14 xl:text-[25px]"
       >
         <button
-          class="relative rounded-full bg-transparent py-2 text-[#A6A5C3] before:absolute before:left-1/2 before:top-full before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-[11px] before:border-t-[22px] before:border-solid before:border-transparent sm:py-3 px-3 sm:px-8 xl:px-10"
+          class="relative rounded-full bg-transparent px-3 py-2 text-[#A6A5C3] before:absolute before:left-1/2 before:top-full before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-[11px] before:border-t-[22px] before:border-solid before:border-transparent sm:px-8 sm:py-3 xl:px-10"
           @click="shipmentOption = 'option1'"
           :class="{
             'bg-white text-black before:border-t-white':
@@ -31,7 +29,7 @@
           У нас
         </button>
         <button
-          class="relative rounded-full bg-transparent py-2 text-[#A6A5C3] before:absolute before:left-1/2 before:top-full before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-[11px] before:border-t-[22px] before:border-solid before:border-transparent sm:py-3 px-3 sm:px-8 xl:px-10"
+          class="relative rounded-full bg-transparent px-3 py-2 text-[#A6A5C3] before:absolute before:left-1/2 before:top-full before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-[11px] before:border-t-[22px] before:border-solid before:border-transparent sm:px-8 sm:py-3 xl:px-10"
           @click="shipmentOption = 'option2'"
           :class="{
             'bg-white text-black before:border-t-white':
@@ -42,7 +40,7 @@
           У диллера
         </button>
         <button
-          class="relative rounded-full bg-transparent py-2 text-[#A6A5C3] before:absolute before:left-1/2 before:top-full before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-[11px] before:border-t-[22px] before:border-solid before:border-transparent sm:py-3 px-3 sm:px-8 xl:px-10"
+          class="relative rounded-full bg-transparent px-3 py-2 text-[#A6A5C3] before:absolute before:left-1/2 before:top-full before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-[11px] before:border-t-[22px] before:border-solid before:border-transparent sm:px-8 sm:py-3 xl:px-10"
           @click="shipmentOption = 'option3'"
           :class="{
             'bg-white text-black before:border-t-white':
@@ -55,7 +53,7 @@
       </div>
       <div
         v-if="shipmentOption === 'option1'"
-        class="flex flex-col gap-5 xl:gap-2 w-full md:w-4/5 xl:w-full"
+        class="flex w-full flex-col gap-5 md:w-4/5 xl:w-full xl:gap-2"
       >
         <div class="flex items-center gap-1">
           <img
@@ -71,6 +69,7 @@
         </div>
         <div class="flex items-center gap-1">
           <img
+            loading="lazy"
             src="/public/svg/cross.svg"
             alt=""
             class="translate-y-1"
@@ -83,6 +82,7 @@
         </div>
         <div class="flex items-center gap-1">
           <img
+            loading="lazy"
             src="/public/svg/cross.svg"
             alt=""
             class="translate-y-1"
@@ -95,6 +95,7 @@
         </div>
         <div class="flex items-center gap-1">
           <img
+            loading="lazy"
             src="/public/svg/cross.svg"
             alt=""
             class="translate-y-1"
@@ -107,10 +108,10 @@
         </div>
       </div>
       <div
-        class="outline-purple-light my-8 p-3 flex flex-wrap items-center justify-center gap-2 gap-y-6 rounded-3xl ap-3 2xl:p-4 outline-dashed outline-2 md:rounded-full xl:my-10"
+        class="ap-3 my-8 flex flex-wrap items-center justify-center gap-2 gap-y-6 rounded-3xl p-3 outline-dashed outline-2 outline-purple-light md:rounded-full xl:my-10 2xl:p-4"
         style="width: fit-content"
       >
-        <div class="text-center ml-4 text-lg md:text-[17px] font-black">
+        <div class="ml-4 text-center text-lg font-black md:text-[17px]">
           Хотите узнать стоимость? Пришлие фото на
         </div>
         <ContactButtons></ContactButtons>

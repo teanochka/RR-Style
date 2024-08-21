@@ -1,20 +1,20 @@
 <template>
   <div
-    class="flex flex-1 flex-col shadow-[inset_0_0_2vw_rgba(255,255,255,0.8)] backdrop-blur-xl justify-between rounded-lg bg-white/5 p-1 text-base lg:p-3 xl:p-5 lg:text-lg"
+    class="flex flex-1 flex-col justify-between rounded-lg bg-white/5 p-1 text-base shadow-[inset_0_0_2vw_rgba(255,255,255,0.8)] backdrop-blur-xl lg:p-3 lg:text-lg xl:p-5"
   >
     <div class="relative">
       <div
         class="flex flex-col gap-2 p-0 text-base sm:text-2xl md:flex-row lg:flex-col xl:text-3xl 2xl:text-4xl"
       >
-        <div class="text-purple-vivid my-0 font-black uppercase">
+        <div class="my-0 font-black uppercase text-purple-vivid">
           {{ type }}ая
         </div>
         <div class="my-0 font-normal text-black">защита</div>
       </div>
-      <img :src="imgSrc" alt="bmv-cover1" />
+      <img loading="lazy" :src="imgSrc" alt="bmv-cover1" />
       <div
         :class="[`gradient-${gradientClass}`]"
-        class="absolute right-0 top-0 w-1/2 rounded-xl p-3 text-white xl:p-[1vw] lg:relative lg:w-full"
+        class="absolute right-0 top-0 w-1/2 rounded-xl p-3 text-white lg:relative lg:w-full xl:p-[1vw]"
       >
         <div
           class="mb-1 text-sm font-bold leading-tight sm:text-base lg:text-[17px] xl:text-[20px] 2xl:text-3xl"
@@ -22,7 +22,7 @@
           Защищает автомобиль на
         </div>
         <div
-          class="grid grid-cols-2 grid-rows-2 xl:gap-x-0 lg:gap-x-6 sm:auto-rows-max"
+          class="grid grid-cols-2 grid-rows-2 sm:auto-rows-max lg:gap-x-6 xl:gap-x-0"
         >
           <div
             class="col-start-1 row-start-1 text-lg font-black sm:text-3xl xl:text-4xl 2xl:text-6xl"
@@ -57,7 +57,11 @@
           class="2xl:space-between flex flex-1 flex-col items-start 2xl:flex-row"
         >
           <div class="flex flex-1 items-center gap-2 text-xl font-bold">
-            <img src="/public/svg/violet-shield-wo-shadow.svg" alt="" />
+            <img
+              loading="lazy"
+              src="/public/svg/violet-shield-wo-shadow.svg"
+              alt=""
+            />
             <div>Защищает:</div>
           </div>
           <div class="flex-1 font-normal">{{ defend }}</div>
@@ -67,7 +71,11 @@
           class="2xl:space-between flex flex-1 flex-col 2xl:flex-row"
         >
           <div class="flex flex-1 items-center gap-2 text-xl font-bold">
-            <img src="/public/svg/pink-shield-wo-shadow.svg" alt="" />
+            <img
+              loading="lazy"
+              src="/public/svg/pink-shield-wo-shadow.svg"
+              alt=""
+            />
             <div>Не защищает:</div>
           </div>
           <div class="flex-1 font-normal">{{ noDefend }}</div>
@@ -97,14 +105,14 @@
           href="#"
           class="flex h-fit w-full items-center justify-center gap-2 rounded-3xl bg-[#34AADF] p-2 hover:underline xl:w-fit xl:px-[1.5vw] xl:py-3"
         >
-          <img src="/svg/telegram.svg" alt="" />
+          <img loading="lazy" src="/svg/telegram.svg" alt="" />
           <div class="hidden xl:block">Telegram</div>
         </a>
         <a
           href="#"
           class="flex h-fit w-full items-center justify-center gap-2 rounded-3xl bg-[#00D95F] p-2 hover:underline xl:w-fit xl:px-[1.5vw] xl:py-3"
         >
-          <img src="/svg/whatsapp.svg" alt="" />
+          <img loading="lazy" src="/svg/whatsapp.svg" alt="" />
           <div class="hidden xl:block">WhatsApp</div>
         </a>
       </div>

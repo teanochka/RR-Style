@@ -16,9 +16,7 @@
   <SectionWhyUs></SectionWhyUs>
   <SectionWhereToOrder></SectionWhereToOrder>
   <SectionMaterials></SectionMaterials>
-  <SectionProjects
-   @scrollToSection="scrollToSection"
-  />
+  <SectionProjects @scrollToSection="scrollToSection" />
   <SectionSalon></SectionSalon>
   <SectionFaq></SectionFaq>
   <SectionReviews></SectionReviews>

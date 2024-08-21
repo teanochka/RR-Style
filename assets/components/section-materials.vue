@@ -1,6 +1,7 @@
 <template>
-  <section id="materials"
-    class="overflow-hidden bg-[#D9D9D9] py-12 sm:py-14 lg:py-16 xl:py-22 text-black xl:flex xl:justify-between"
+  <section
+    id="materials"
+    class="xl:py-22 overflow-hidden bg-[#D9D9D9] py-12 text-black sm:py-14 lg:py-16 xl:flex xl:justify-between"
   >
     <div
       class="flex-none px-[20px] md:px-[30px] xl:w-3/5 xl:pl-[40px] 2xl:w-[60vw] 2xl:pl-[8vw]"
@@ -9,10 +10,10 @@
         <div>
           <h2 class="my-4 lg:my-6">С какой плёнкой мы работаем?</h2>
           <div
-            class="bg-purple-dark mb-5 sm:mb-14 lg:mb-24 xl:mb-8 flex w-max rounded-full p-2 text-[17px] sm:p-3 sm:text-2xl xl:text-[25px]"
+            class="mb-5 flex w-max rounded-full bg-purple-dark p-2 text-[17px] sm:mb-14 sm:p-3 sm:text-2xl lg:mb-24 xl:mb-8 xl:text-[25px]"
           >
             <button
-              class="relative rounded-full bg-transparent text-[#A6A5C3] before:absolute before:left-1/2 before:top-full before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-[11px] before:border-t-[22px] before:border-solid before:border-transparent p-3 px-11"
+              class="relative rounded-full bg-transparent p-3 px-11 text-[#A6A5C3] before:absolute before:left-1/2 before:top-full before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-[11px] before:border-t-[22px] before:border-solid before:border-transparent"
               @click="company = 'llumar'"
               :class="{
                 'bg-white text-black before:border-t-white':
@@ -23,7 +24,7 @@
               Llumar
             </button>
             <button
-              class="relative rounded-full bg-transparent text-[#A6A5C3] before:absolute before:left-1/2 before:top-full before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-[11px] before:border-t-[22px] before:border-solid before:border-transparent p-3 px-11"
+              class="relative rounded-full bg-transparent p-3 px-11 text-[#A6A5C3] before:absolute before:left-1/2 before:top-full before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-[11px] before:border-t-[22px] before:border-solid before:border-transparent"
               @click="company = 'suntek'"
               :class="{
                 'bg-white text-black before:border-t-white':
@@ -36,6 +37,7 @@
           </div>
         </div>
         <img
+          loading="lazy"
           class="relative right-0 top-0 z-0 hidden h-full w-[227px] -translate-y-12 translate-x-[30px] object-contain sm:flex xl:hidden"
           src="/public/img/wrap.png"
           alt=""
@@ -47,6 +49,7 @@
       >
         <div class="grid grid-cols-3 grid-rows-3 items-center gap-x-7">
           <img
+            loading="lazy"
             class="col-span-1 row-start-1 w-full sm:row-span-3"
             src="/public/img/lumar.png"
             alt=""
@@ -70,13 +73,23 @@
           class="grid grid-cols-1 gap-3 text-xl md:grid-cols-2 2xl:grid-cols-4 2xl:gap-[1vw]"
         >
           <div class="rounded-lg bg-white p-4">
-            <img src="/public/svg/big-cross.svg" class="h-[70px]" alt="" />
+            <img
+              loading="lazy"
+              src="/public/svg/big-cross.svg"
+              class="h-[70px]"
+              alt=""
+            />
             <div>
               высокий коэффициент защиты от вредных ультрафиолетовых лучей
             </div>
           </div>
           <div class="rounded-lg bg-white p-4">
-            <img src="/public/svg/big-cross.svg" class="h-[70px]" alt="" />
+            <img
+              loading="lazy"
+              src="/public/svg/big-cross.svg"
+              class="h-[70px]"
+              alt=""
+            />
             <div>
               повышенная видимость даже в темное время суток (в том числе даже
               вечером вы сможете легко парковаться без использования фонарей и
@@ -84,14 +97,24 @@
             </div>
           </div>
           <div class="rounded-lg bg-white p-4">
-            <img src="/public/svg/big-cross.svg" class="h-[70px]" alt="" />
+            <img
+              loading="lazy"
+              src="/public/svg/big-cross.svg"
+              class="h-[70px]"
+              alt=""
+            />
             <div>
               максимальная толщина среди всех полиуретановых плёнок (214 микрон)
               сможет защитить стекло даже в случае лёгкого дтп
             </div>
           </div>
           <div class="rounded-lg bg-white p-4">
-            <img src="/public/svg/big-cross.svg" class="h-[70px]" alt="" />
+            <img
+              loading="lazy"
+              src="/public/svg/big-cross.svg"
+              class="h-[70px]"
+              alt=""
+            />
             <div>
               относительная сложность при нанесении, благодаря которой с данной
               пленкой работают только профессионалы, а дилетанты избегают её.
@@ -101,6 +124,7 @@
       </div>
     </div>
     <img
+      loading="lazy"
       class="hidden flex-initial self-start object-contain xl:flex 2xl:flex-auto"
       src="/public/img/wrap.png"
       alt=""

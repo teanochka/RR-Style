@@ -1,18 +1,16 @@
 <template>
   <section id="projects" class="relative overflow-hidden text-white">
-    <img
-      class="absolute left-0 top-0 z-0"
-      src="/public/img/projects-background.png"
-      alt=""
-    />
-    <div class="relative z-10 py-12 sm:my-8 lg:my-16 xl:my-22">
+    <div
+      class="absolute left-0 top-0 z-0 h-full w-full bg-[url('/img/projects-background.png')] bg-cover"
+    ></div>
+    <div class="xl:my-22 relative z-10 py-12 sm:my-8 lg:my-16">
       <h2
-        class="px-[20px] md:px-[30px] xl:px-[40px] 2xl:px-[8vw] 2xl:mb-10 mb-6 text-white"
+        class="mb-6 px-[20px] text-white md:px-[30px] xl:px-[40px] 2xl:mb-10 2xl:px-[8vw]"
       >
         Знаковые проекты
       </h2>
       <div
-        class="relative grid grid-cols-1 gap-y-10 px-2 2xl:px-[8vw] gap-x-[1.5vw] lg:grid-cols-3"
+        class="relative grid grid-cols-1 gap-x-[1.5vw] gap-y-10 px-2 lg:grid-cols-3 2xl:px-[8vw]"
       >
         <div
           v-for="(project, index) in displayedProjects"
@@ -30,7 +28,7 @@
       <div class="flex flex-col justify-center">
         <button
           v-if="remainingProjects > 3"
-          class="text-normal my-12 lg:my-16 2xl:mt-24 w-max self-center rounded-full bg-white px-10 py-4 text-2xl text-black hover:bg-[#5057A7] hover:text-white"
+          class="text-normal my-12 w-max self-center rounded-full bg-white px-10 py-4 text-2xl text-black hover:bg-[#5057A7] hover:text-white lg:my-16 2xl:mt-24"
           @click="showMoreProjects"
         >
           Показать еще {{ remainingProjects - 3 }}
@@ -38,7 +36,7 @@
         </button>
         <button
           v-else
-          class="text-normal my-12 lg:my-16 2xl:mt-24 w-max self-center rounded-full bg-white px-10 py-4 text-2xl text-black hover:bg-[#5057A7] hover:text-white"
+          class="text-normal my-12 w-max self-center rounded-full bg-white px-10 py-4 text-2xl text-black hover:bg-[#5057A7] hover:text-white lg:my-16 2xl:mt-24"
           @click="showLessProjects(), $emit('scrollToSection', 'projects')"
         >
           Свернуть

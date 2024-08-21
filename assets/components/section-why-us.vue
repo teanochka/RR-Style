@@ -1,12 +1,12 @@
 <template>
   <section
     id="whyUs"
-    class="my-16 xl:my-32 px-[20px] text-white md:px-[30px] xl:px-[40px] 2xl:px-[8vw]"
+    class="my-16 px-[20px] text-white md:px-[30px] xl:my-32 xl:px-[40px] 2xl:px-[8vw]"
   >
     <h2 class="mb-12">Почему мы?</h2>
     <div class="grid grid-cols-1 gap-[2.5vw] lg:grid-cols-3">
       <div>
-        <img src="/public/img/why-us-1.png" alt="" />
+        <img loading="lazy" src="/public/img/why-us-1.png" alt="" />
         <h3 class="my-3">Оклеиваем даже Mercedes G-класса.</h3>
         <div class="text-base font-normal md:text-lg xl:text-xl">
           У нас есть успешный опыт работы с автомобилями, наиболее сложными для
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div>
-        <img src="/public/img/why-us-2.png" alt="" />
+        <img loading="lazy" src="/public/img/why-us-2.png" alt="" />
         <h3 class="my-3">Знаем все тонкости</h3>
         <div class="text-base font-normal md:text-lg xl:text-xl">
           Мы оклеиваем любые автомобили - от китайских новинок до премиальных
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div>
-        <img src="/public/img/why-us-3.png" alt="" />
+        <img loading="lazy" src="/public/img/why-us-3.png" alt="" />
         <h3 class="my-3">Не используем шаблоны.</h3>
         <div class="text-base font-normal md:text-lg xl:text-xl">
           При оклейке кузова мы не используем лекала, а режем плёнку сами.
