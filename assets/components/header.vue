@@ -27,7 +27,7 @@
         </div>
         <button
           @click="(isMenuVisible = true), stopScroll()"
-          class="] flex h-fit items-center gap-2 self-center rounded-full border border-purple-light bg-transparent px-[1.5625vw] py-[calc(1px+1.5625vw)] md:py-2"
+          class="flex h-fit items-center gap-2 self-center rounded-full border border-purple-light bg-transparent px-[1.5625vw] py-[calc(1px+1.5625vw)] md:py-2"
         >
           <img loading="lazy" src="/svg/menu.svg" alt="" class="w-[21px]" />
           <div class="hidden text-lg md:block">Меню</div>
@@ -103,6 +103,6 @@ export default {
       }
     },
   },
-  inject: ["scrollToSection"],
+  // inject: ["scrollToSection"],
 };
 </script>

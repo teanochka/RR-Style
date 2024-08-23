@@ -53,60 +53,69 @@
     <div
       class="flex flex-col p-4 text-base font-black md:px-8 md:py-6 md:pl-[5vw] md:text-2xl lg:text-3xl 2xl:px-14 2xl:py-10"
     >
-      <a
-        @click="$emit('close'), $emit('scrollToSection', 'whatYouWant')"
-        class="border-white/20 from-white/5 to-white/10 py-2 text-left uppercase hover:cursor-pointer hover:bg-gradient-to-b md:border-0 md:py-4 md:hover:bg-none"
+    <NuxtLink
+        :to="{ name: 'index', hash: '#whatYouWant' }"
+        @click="$emit('close')"
+        class="border-t-[0.1px] border-white/20 from-white/5 to-white/10 py-2 text-left uppercase hover:cursor-pointer hover:bg-gradient-to-b md:border-0 md:py-4 md:hover:bg-none"
       >
         Что вам нужно?
-      </a>
-      <a
-        @click="$emit('close'), $emit('scrollToSection', 'whyUs')"
+    </NuxtLink>
+      <NuxtLink
+        :to="{ name: 'index', hash: '#whyUs' }"
+        @click="$emit('close')"
         class="border-t-[0.1px] border-white/20 from-white/5 to-white/10 py-2 text-left uppercase hover:cursor-pointer hover:bg-gradient-to-b md:border-0 md:py-4 md:hover:bg-none"
       >
         Почему мы?
-      </a>
-      <a
-        @click="$emit('close'), $emit('scrollToSection', 'whereToOrder')"
+      </NuxtLink>
+      <NuxtLink
+        :to="{ name: 'index', hash: '#whereToOrder' }"
+        @click="$emit('close')"
         class="border-t-[0.1px] border-white/20 from-white/5 to-white/10 py-2 text-left uppercase hover:cursor-pointer hover:bg-gradient-to-b md:border-0 md:py-4 md:hover:bg-none"
       >
         где заказать оклейку?
-      </a>
-      <a
-        @click="$emit('close'), $emit('scrollToSection', 'materials')"
+      </NuxtLink>
+      <NuxtLink
+        :to="{ name: 'index', hash: '#materials' }"
+        @click="$emit('close')"
         class="border-t-[0.1px] border-white/20 from-white/5 to-white/10 py-2 text-left uppercase hover:cursor-pointer hover:bg-gradient-to-b md:border-0 md:py-4 md:hover:bg-none"
       >
         С какой плёнкой мы работаем?
-      </a>
-      <a
-        @click="$emit('close'), $emit('scrollToSection', 'projects')"
+      </NuxtLink>
+      <NuxtLink
+        :to="{ name: 'index', hash: '#projects' }"
+        @click="$emit('close')"
         class="border-t-[0.1px] border-white/20 from-white/5 to-white/10 py-2 text-left uppercase hover:cursor-pointer hover:bg-gradient-to-b md:border-0 md:py-4 md:hover:bg-none"
       >
         Знаковые проекты
-      </a>
-      <a
-        @click="$emit('close'), $emit('scrollToSection', 'salon')"
+      </NuxtLink>
+      <NuxtLink
+        :to="{ name: 'index', hash: '#salon' }"
+        @click="$emit('close')"
         class="border-t-[0.1px] border-white/20 from-white/5 to-white/10 py-2 text-left uppercase hover:cursor-pointer hover:bg-gradient-to-b md:border-0 md:py-4 md:hover:bg-none"
       >
         оклейка салона
-      </a>
-      <a
-        @click="$emit('close'), $emit('scrollToSection', 'faq')"
+      </NuxtLink>
+      <NuxtLink
+        :to="{ name: 'index', hash: '#faq' }"
+        @click="$emit('close')"
         class="border-t-[0.1px] border-white/20 from-white/5 to-white/10 py-2 text-left uppercase hover:cursor-pointer hover:bg-gradient-to-b md:border-0 md:py-4 md:hover:bg-none"
       >
         Вопрос-ответ
-      </a>
-      <a
-        @click="$emit('close'), $emit('scrollToSection', 'reviews')"
+      </NuxtLink>
+      <NuxtLink
+        :to="{ name: 'index', hash: '#reviews' }"
+        @click="$emit('close')"
         class="border-t-[0.1px] border-white/20 from-white/5 to-white/10 py-2 text-left uppercase hover:cursor-pointer hover:bg-gradient-to-b md:border-0 md:py-4 md:hover:bg-none"
       >
         Отзывы
-      </a>
-      <a
-        @click="$emit('close'), $emit('scrollToSection', 'contacts')"
+      </NuxtLink>
+      <NuxtLink
+        :to="{ name: 'index', hash: '#contacts' }"
+        @click="$emit('close')"
         class="border-t-[0.1px] border-white/20 from-white/5 to-white/10 py-2 text-left uppercase hover:cursor-pointer hover:bg-gradient-to-b md:border-0 md:py-4 md:hover:bg-none"
       >
         Контакты
-      </a>
+      </NuxtLink>
     </div>
   </div>
 </template>
