@@ -1,9 +1,18 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <SectionAboutUs></SectionAboutUs>
+  <SectionWhatYouWant @getChosenService="getChosenService" />
+  <SectionWhyUs></SectionWhyUs>
+  <SectionWhereToOrder :serviceOption="serviceOption" />
+  <SectionMaterials :serviceOption="serviceOption" />
+  <SectionProjects
+    @scrollToSection="scrollToSection"
+    :serviceOption="serviceOption"
+  />
+  <SectionSalon></SectionSalon>
+  <SectionFaq :serviceOption="serviceOption" />
+  <SectionReviews></SectionReviews>
+  <SectionContacts></SectionContacts>
 </template>
-
 <script>
 import SectionAboutUs from "./assets/components/section-about-us.vue";
 import ContactButtons from "./assets/components/contact-buttons.vue";
@@ -36,17 +45,13 @@ export default {
   },
   data() {
     return {
-      navbarHeight: 0,
+      serviceOption: 1,
     };
   },
-
-  provide: {
-    scrollToSection(id) {
-      const sectionPos = document.getElementById(id).offsetTop;
-      const navbarHeight = document.getElementById("navbar").offsetHeight;
-      const scrollPos = sectionPos - navbarHeight;
-      window.scrollTo(0, scrollPos);
-      console.log(scrollPos);
+  inject: ['scrollToSection'],
+  methods: {
+    getChosenService(option) {
+      this.serviceOption = option;
     },
   },
 };
