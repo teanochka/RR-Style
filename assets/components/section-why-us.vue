@@ -4,7 +4,7 @@
     class="my-16 px-[20px] text-white md:px-[30px] xl:my-32 xl:px-[40px] 2xl:px-[8vw]"
   >
     <h2 class="mb-12">Почему мы?</h2>
-    <div class="grid grid-cols-1 gap-[2.5vw] lg:grid-cols-3">
+    <div class="grid grid-cols-1 gap-12 lg:gap-[2.5vw] lg:grid-cols-3">
       <div>
         <img loading="lazy" src="/public/img/why-us-1.png" alt="" />
         <h3 class="my-3">Оклеиваем даже Mercedes G-класса.</h3>

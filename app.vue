@@ -5,29 +5,36 @@
     @close="(isMenuVisible = false), stopScroll()"
     @scrollToSection="scrollToSection"
   />
-  <Header
+  <!-- <Header
     :isMenuVisible="isMenuVisible"
     :isSticky="isSticky"
     @toggleMenu="(isMenuVisible = true), stopScroll()"
     @navbarHeight="handleNavbarHeight"
-  />
-  <SectionAboutUs></SectionAboutUs>
-  <SectionWhatYouWant></SectionWhatYouWant>
-  <SectionWhyUs></SectionWhyUs>
-  <SectionWhereToOrder></SectionWhereToOrder>
-  <SectionMaterials></SectionMaterials>
-  <SectionProjects @scrollToSection="scrollToSection" />
-  <SectionSalon></SectionSalon>
-  <SectionFaq></SectionFaq>
-  <SectionReviews></SectionReviews>
-  <SectionContacts></SectionContacts>
-  <Footer></Footer>
+  /> -->
+  <NuxtLayout
+    :isMenuVisible="isMenuVisible"
+    :isSticky="isSticky"
+    @toggleMenu="(isMenuVisible = true), stopScroll()"
+    @navbarHeight="handleNavbarHeight"
+  >
+    <SectionAboutUs></SectionAboutUs>
+    <SectionWhatYouWant @getChosenService="getChosenService" />
+    <SectionWhyUs></SectionWhyUs>
+    <SectionWhereToOrder :serviceOption="serviceOption" />
+    <SectionMaterials :serviceOption="serviceOption" />
+    <SectionProjects
+      @scrollToSection="scrollToSection"
+      :serviceOption="serviceOption"
+    />
+    <SectionSalon></SectionSalon>
+    <SectionFaq :serviceOption="serviceOption" />
+    <SectionReviews></SectionReviews>
+    <SectionContacts></SectionContacts>
+  </NuxtLayout>
+  <!-- <Footer></Footer> -->
 </template>
 
 <script>
-import { withMemo } from "vue";
-import Header from "/assets/components/header.vue";
-import Footer from "./assets/components/footer.vue";
 import SectionAboutUs from "./assets/components/section-about-us.vue";
 import ContactButtons from "./assets/components/contact-buttons.vue";
 import Menu from "./assets/components/menu.vue";
@@ -57,9 +64,7 @@ export default {
     SectionMaterials,
     SectionReviews,
     SectionContacts,
-    Footer,
     Menu,
-    Header,
   },
   mounted() {
     window.addEventListener("scroll", this.onScroll);
@@ -69,7 +74,7 @@ export default {
   },
   data() {
     return {
-      selectedOption: "option1",
+      serviceOption: 1,
       shipmentOption: "option1",
       company: "llumar",
       isMenuVisible: false,
@@ -99,6 +104,9 @@ export default {
       const sectionPos = document.getElementById(id).offsetTop;
       const scrollPos = sectionPos - this.navbarHeight;
       window.scrollTo(0, scrollPos);
+    },
+    getChosenService(option) {
+      this.serviceOption = option;
     },
   },
 };

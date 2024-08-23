@@ -1,6 +1,6 @@
 <template>
-  <div class="grid grid-cols-[50px_1fr] gap-2 md:gap-4">
-    <button @click="item.showAnswer = !item.showAnswer">
+  <div @click="item.showAnswer = !item.showAnswer" class="grid grid-cols-[50px_1fr] gap-2 md:gap-4 hover:cursor-pointer">
+    <div>
       <img
         loading="lazy"
         v-if="!item.showAnswer"
@@ -8,7 +8,7 @@
         alt="+"
       />
       <img loading="lazy" v-else src="/public/svg/minus.svg" alt="-" />
-    </button>
+    </div>
     <div class="text-[20px] font-bold md:text-2xl">
       {{ item.question }}
     </div>

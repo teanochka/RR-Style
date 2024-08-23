@@ -12,48 +12,48 @@
       </h2>
       <div class="flex gap-[0.1vw]">
         <button
-          class="rounded-t-lg px-[calc(12px+1.5625vw)] py-[calc(8px+1.5625vw)] font-bold text-black"
+          class="rounded-t-lg px-3 py-[calc(8px+1.5625vw)] font-bold text-black sm:px-[calc(12px+1.5625vw)]"
           :class="{
-            'bg-white': selectedOption === 'option1',
+            'bg-white': selectedOption === 1,
             'bg-white/[0.2] text-[#C0C1C8] hover:bg-white/[0.4] hover:text-white':
-              selectedOption !== 'option1',
+              selectedOption !== 1,
           }"
-          @click="selectedOption = 'option1'"
+          @click="selectOption(1)"
         >
-          <h3>Оклейка прозрачной пленкой</h3>
+          <h3 class="leading-5">Оклейка прозрачной пленкой</h3>
         </button>
         <button
-          class="rounded-t-lg px-[calc(12px+1.5625vw)] py-[calc(8px+1.5625vw)] font-bold text-black"
+          class="rounded-t-lg px-3 py-[calc(8px+1.5625vw)] font-bold text-black sm:px-[calc(12px+1.5625vw)]"
           :class="{
-            'bg-white': selectedOption === 'option2',
+            'bg-white': selectedOption === 2,
             'bg-white/[0.2] text-[#C0C1C8] hover:bg-white/[0.4] hover:text-white':
-              selectedOption !== 'option2',
+              selectedOption !== 2,
           }"
-          @click="selectedOption = 'option2'"
+          @click="selectOption(2)"
         >
-          <h3 class="leading-tight">Оклейка матовой пленкой</h3>
+          <h3 class="leading-5">Оклейка матовой пленкой</h3>
         </button>
         <button
-          class="rounded-t-lg px-[calc(12px+1.5625vw)] py-[calc(8px+1.5625vw)] font-bold text-black"
+          class="rounded-t-lg px-3 py-[calc(8px+1.5625vw)] font-bold text-black sm:px-[calc(12px+1.5625vw)]"
           :class="{
-            'bg-white': selectedOption === 'option3',
+            'bg-white': selectedOption === 3,
             'bg-white/[0.2] text-[#C0C1C8] hover:bg-white/[0.4] hover:text-white':
-              selectedOption !== 'option3',
+              selectedOption !== 3,
           }"
-          @click="selectedOption = 'option3'"
+          @click="selectOption(3)"
         >
-          <h3 class="leading-tight">Тонировка стёкол</h3>
+          <h3 class="leading-5">Тонировка стёкол</h3>
         </button>
       </div>
       <div
         class="rounded-b-lg rounded-tr-lg bg-[#E7E7E7] bg-gradient-to-b from-white to-transparent to-30% p-[calc(12px+1.5625vw)] text-black"
       >
         <div
-          v-if="selectedOption === 'option1'"
+          v-if="selectedOption === 1"
           class="flex flex-col gap-[calc(16px+1.5625vw)]"
         >
           <div
-            class="auto-rows-min gap-[3vw] gap-y-2 md:grid md:grid-cols-[minmax(273px,1fr)_minmax(0,1.5fr)] md:grid-rows-2"
+            class="auto-rows-min gap-[3vw] gap-y-2 md:grid md:grid-cols-[minmax(273px,1fr)_minmax(0,1.5fr)] md:grid-rows-[minmax(1fr,2fr)_1fr]"
           >
             <div
               class="col-span-1 col-start-2 row-span-1 row-start-1 mb-6 text-[30px] font-bold leading-tight lg:text-[36px] 2xl:text-[40px]"
@@ -176,8 +176,14 @@ export default {
   },
   data() {
     return {
-      selectedOption: "option1",
+      selectedOption: 1,
     };
+  },
+  methods: {
+    selectOption(option) {
+      this.selectedOption = option;
+      this.$emit("getChosenService", option);
+    },
   },
 };
 </script>

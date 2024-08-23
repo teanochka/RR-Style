@@ -19,47 +19,30 @@
         Наглядно покажем чем мы отличаемся от других мест
       </div>
       <div
-        class="mb-8 mt-8 flex w-max rounded-full bg-purple-dark p-2 text-[17px] sm:text-[20px] xl:mb-14 xl:text-[25px]"
+        class="mb-8 mt-8 flex rounded-full bg-purple-dark p-2 text-[17px] xs:w-max sm:text-[20px] xl:mb-14 xl:text-[25px]"
       >
-        <button
-          class="relative rounded-full bg-transparent px-3 py-2 text-[#A6A5C3] before:absolute before:left-1/2 before:top-full before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-[11px] before:border-t-[22px] before:border-solid before:border-transparent sm:px-8 sm:py-3 xl:px-10"
-          @click="shipmentOption = 'option1'"
-          :class="{
-            'bg-white text-black before:border-t-white':
-              shipmentOption == 'option1',
-            'hover:underline': shipmentOption !== 'option1',
-          }"
-        >
-          У нас
-        </button>
-        <button
-          class="relative rounded-full bg-transparent px-3 py-2 text-[#A6A5C3] before:absolute before:left-1/2 before:top-full before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-[11px] before:border-t-[22px] before:border-solid before:border-transparent sm:px-8 sm:py-3 xl:px-10"
-          @click="shipmentOption = 'option2'"
-          :class="{
-            'bg-white text-black before:border-t-white':
-              shipmentOption == 'option2',
-            'hover:underline': shipmentOption !== 'option2',
-          }"
-        >
-          У диллера
-        </button>
-        <button
-          class="relative rounded-full bg-transparent px-3 py-2 text-[#A6A5C3] before:absolute before:left-1/2 before:top-full before:h-0 before:w-0 before:-translate-x-1/2 before:border-x-[11px] before:border-t-[22px] before:border-solid before:border-transparent sm:px-8 sm:py-3 xl:px-10"
-          @click="shipmentOption = 'option3'"
-          :class="{
-            'bg-white text-black before:border-t-white':
-              shipmentOption == 'option3',
-            'hover:underline': shipmentOption !== 'option3',
-          }"
-        >
-          По объявлению
-        </button>
+        <template v-for="(option, index) in shipmentOptions">
+          <button
+            v-if="option.isAvailable"
+            class="relative rounded-full bg-transparent p-1 text-[#A6A5C3] before:absolute before:left-1/2 before:top-full before:h-0 before:w-0 before:-translate-x-1/2 before:-translate-y-2 before:border-x-[11px] before:border-t-[22px] before:border-solid before:border-transparent xs:px-3 xs:py-2 sm:px-8 sm:py-3 lg:before:translate-y-0 xl:px-10"
+            @click="shipmentOption = index"
+            :class="{
+              'bg-white text-black before:border-t-white':
+                shipmentOption == index,
+              'hover:underline': shipmentOption !== index,
+            }"
+          >
+            {{ option.title }}
+          </button>
+        </template>
       </div>
       <div
-        v-if="shipmentOption === 'option1'"
-        class="flex w-full flex-col gap-5 md:w-4/5 xl:w-full xl:gap-2"
+        class="flex w-full -translate-x-2 flex-col gap-5 md:w-4/5 xl:w-full xl:gap-2"
       >
-        <div class="flex items-center gap-1">
+        <div
+          v-for="(pro, index) in shipmentOptions[shipmentOption].pros"
+          class="flex items-center gap-1"
+        >
           <img
             src="/public/svg/cross.svg"
             alt=""
@@ -67,47 +50,7 @@
             style="filter: drop-shadow(0px 4px 4px rgba(140, 149, 2554, 0.4))"
           />
           <div class="align-top text-xl">
-            качественная плёнка - только легальная плёнка от проверенных
-            производителей
-          </div>
-        </div>
-        <div class="flex items-center gap-1">
-          <img
-            loading="lazy"
-            src="/public/svg/cross.svg"
-            alt=""
-            class="translate-y-1"
-            style="filter: drop-shadow(0px 4px 4px rgba(140, 149, 2554, 0.4))"
-          />
-          <div class="align-top text-xl">
-            подготовленное помещение - удобный бокс с максимальным уровнем
-            чистоты и стерильности
-          </div>
-        </div>
-        <div class="flex items-center gap-1">
-          <img
-            loading="lazy"
-            src="/public/svg/cross.svg"
-            alt=""
-            class="translate-y-1"
-            style="filter: drop-shadow(0px 4px 4px rgba(140, 149, 2554, 0.4))"
-          />
-          <div class="align-top text-xl">
-            разная цена - на выбор доступны комплексы, отличающиеся по степени
-            защиты и цене
-          </div>
-        </div>
-        <div class="flex items-center gap-1">
-          <img
-            loading="lazy"
-            src="/public/svg/cross.svg"
-            alt=""
-            class="translate-y-1"
-            style="filter: drop-shadow(0px 4px 4px rgba(140, 149, 2554, 0.4))"
-          />
-          <div class="align-top text-xl">
-            высокий уровень профессионализма - наши специалисты занимаются
-            оклейкой уже больше 15 лет
+            {{ pro }}
           </div>
         </div>
       </div>
@@ -125,13 +68,69 @@
 <script>
 import ContactButtons from "./assets/components/contact-buttons.vue";
 export default {
+  props: {
+    serviceOption: Number,
+  },
   components: {
     ContactButtons,
   },
   data() {
     return {
-      shipmentOption: "option1",
+      shipmentOption: 0,
+      shipmentOptions: [
+        {
+          title: "У нас",
+          isAvailable: 1,
+          pros: [
+            "качественная плёнка - только легальная плёнка от проверенных производителей",
+            "подготовленное помещение - удобный бокс с максимальным уровнем чистоты и стерильности",
+            "разная цена - на выбор доступны комплексы, отличающиеся по степени защиты и цене",
+            "высокий уровень профессионализма - наши специалисты занимаются оклейкой уже больше 15 лет",
+          ],
+        },
+        {
+          title: "У диллера",
+          isAvailable: 0,
+          pros: [
+            "подготовленное помещение - удобный бокс с максимальным уровнем чистоты и стерильности",
+            "качественная плёнка - только легальная плёнка от проверенных производителей",
+            "разная цена - на выбор доступны комплексы, отличающиеся по степени защиты и цене",
+            "высокий уровень профессионализма - наши специалисты занимаются оклейкой уже больше 15 лет",
+          ],
+        },
+        {
+          title: "По объявлению",
+          isAvailable: 0,
+          pros: [
+            "разная цена - на выбор доступны комплексы, отличающиеся по степени защиты и цене",
+            "качественная плёнка - только легальная плёнка от проверенных производителей",
+            "подготовленное помещение - удобный бокс с максимальным уровнем чистоты и стерильности",
+            "высокий уровень профессионализма - наши специалисты занимаются оклейкой уже больше 15 лет",
+          ],
+        },
+      ],
     };
+  },
+  mounted() {
+    this.updateShipmentOptions();
+  },
+  watch: {
+    serviceOption(newVal, oldVal) {
+      this.updateShipmentOptions();
+    },
+  },
+  methods: {
+    updateShipmentOptions() {
+      this.shipmentOptions.forEach((option, index) => {
+        if (this.serviceOption === 1) {
+          option.isAvailable = 1;
+          this.shipmentOption = 0;
+        } else {
+          option.isAvailable = index > 0 ? 1 : 0;
+          this.shipmentOption = 1;
+        }
+      });
+    },
   },
 };
 </script>
